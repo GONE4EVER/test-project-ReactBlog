@@ -4,9 +4,12 @@ import ReactDOM from 'react-dom';
 import styles from './App.css';
 
 const App = () => (
-	<main className={styles.App}>
-		{'Hi'}
-	</main>
+	<>
+		<header className={styles.AppHeader} />
+		<main className={styles.AppContainer}>
+			{'Hi'}
+		</main>
+	</>
 );
 
 ReactDOM.render(
