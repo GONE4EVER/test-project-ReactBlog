@@ -1,0 +1,7 @@
+.element {
+  cursor: pointer;
+}
+
+.element:active {
+  color: #61DAFB
+}
