@@ -1,7 +1,37 @@
 .element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2em;
   cursor: pointer;
+
+  
+  height: 100%;
+  width: 50%;
 }
 
-.element:active {
-  color: #61DAFB
+.activeEl {
+  color: rgb(255, 255, 255);
 }
+
+.text {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+  height: 100%;
+}
+
+.border {
+  width: 100%;
+  height: 3px;
+  background: inherit;
+}
+
+.activeBorder {
+  background: rgb(255, 255, 255);
+}
+
+

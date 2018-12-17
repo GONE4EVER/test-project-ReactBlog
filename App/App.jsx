@@ -1,27 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+
+import Main from './components/Main';
+import CreatePost from './components/CreatePost';
 
 import styles from './App.css';
 import NavBar from './components/NavBar/NavBar';
 
-import navTabs from './components/NavBar/tabs';
 
 const App = () => (
-	<>
-		<header className={styles.AppHeader}>
-			<NavBar>
-				{NavElement => (
-					navTabs.map(name => (
-						<NavElement key={name} name={name} />
-					))
-				)}
-			</NavBar>
-		</header>
-
-		<main className={styles.AppContainer}>
-			{'Hi'}
-		</main>
-	</>
+	<HashRouter>
+		<>
+			<NavBar />
+			<div className={styles.AppContainer}>
+				<Switch>
+					<Route exact path="/Main" component={Main} />
+					<Route path="/Create_Post" component={CreatePost} />
+				</Switch>
+			</div>
+		</>
+	</HashRouter>
 );
 
 

@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -14,7 +15,7 @@ module.exports = {
 	devServer: {
 		contentBase: './Dist/'
 	},
-	resolve: { extensions: ['.js', '.jsx'] },
+	resolve: { extensions: ['.js', '.jsx', '.css'] },
 	module: {
 		rules: [
 			{
@@ -71,6 +72,12 @@ module.exports = {
 		new ExtractTextPlugin({
 			filename: 'static/css/style.css'
 		}),
-		new HtmlWebpackPlugin({ template: './index.html' })
-	],
+		new HtmlWebpackPlugin({ template: './index.html' }),
+		new CopyWebpackPlugin([
+			{
+				from: './node_modules/materialize-css/dist/css/materialize.min.css',
+				to: 'static/css/'
+			}
+		])
+	]
 };

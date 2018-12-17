@@ -1,0 +1,17 @@
+.AppHeader {
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  color: #61DAFB;
+
+  height: var(--headerHeight);
+  width: 100%;
+  z-index: 1000;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #282c34;
+  color: white;
+}

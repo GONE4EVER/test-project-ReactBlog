@@ -1,7 +1,7 @@
 export default [
 	'Main',
-	'Create Post',
-	'Manage posts',
-	'Create category',
-	'Manage category'
+	'Create_Post',
+	'Manage_posts',
+	'Create_category',
+	'Manage_category'
 ];

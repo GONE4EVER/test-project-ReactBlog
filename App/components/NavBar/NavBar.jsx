@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
 import NavBarElement from '../NavBarElement';
+import navTabs from './tabs';
 
 import styles from './NavBar.css';
 
 
 class NavBar extends Component {
   state = {
-
+  	active: 'Main'
   }
 
-  render() {
-  	const { children } = this.props;
+	switchTab = (nextTab) => {
+		this.setState((currState) => {
+			const { active } = currState;
 
-  	return (
-  		<nav className={styles.NavBar}>
-    		{children(NavBarElement)}
-  		</nav>
-  	);
-  }
+			if (active !== nextTab) {
+				return { active: nextTab };
+			}
+			return {};
+		});
+	}
+
+	render() {
+		const { active } = this.state;
+
+		return (
+			<nav className={styles.NavBar}>
+				{navTabs.map(name => (
+					<NavBarElement
+						key={name}
+						name={name}
+						onClick={this.switchTab}
+						active={active === name}
+					/>
+				))}
+			</nav>
+		);
+	}
 }
 
 
