@@ -1,0 +1,16 @@
+[
+  {
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
+    "heading": "Heading",
+    "img": "http://www.setwalls.ru/pic/201401/640x960/setwalls.ru-65688.jpg",
+    "comments": [
+      "id1", "id2"
+    ],
+    "likes": [
+      "userId1", "userId2"
+    ],
+    "dislikes": [
+      "userId3", "userId4"
+    ]
+  }
+]

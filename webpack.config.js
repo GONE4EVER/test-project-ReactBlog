@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const srcUrl = 'localhost:8082';
 
 module.exports = {
 	mode: 'development',
@@ -13,7 +14,15 @@ module.exports = {
 	},
 	devtool: 'inline-source-map',
 	devServer: {
-		contentBase: './Dist/'
+		contentBase: './Dist/',
+		proxy: {
+			'*': {
+				target: srcUrl,
+				bypass() {
+					return 'index.html';
+				}
+			}
+		}
 	},
 	resolve: { extensions: ['.js', '.jsx', '.css'] },
 	module: {

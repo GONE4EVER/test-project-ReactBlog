@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import NavBarElement from '../NavBarElement';
+import NavBarElement from './NavBarElement';
 import navTabs from './tabs';
 
 import styles from './NavBar.css';
 
 
 class NavBar extends Component {
-  state = {
-  	active: 'Main'
-  }
+	state = {
+		active: document.location.pathname !== '/'
+			? document.location.pathname.replace('/', '')
+			: 'main'
+	}
 
 	switchTab = (nextTab) => {
 		this.setState((currState) => {
@@ -26,12 +28,13 @@ class NavBar extends Component {
 
 		return (
 			<nav className={styles.NavBar}>
-				{navTabs.map(name => (
+				{navTabs.map(({ name, pathName }) => (
 					<NavBarElement
 						key={name}
 						name={name}
+						pathName={pathName}
 						onClick={this.switchTab}
-						active={active === name}
+						active={active === pathName}
 					/>
 				))}
 			</nav>

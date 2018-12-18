@@ -10,19 +10,22 @@ const BottomBorderElem = ({ active }) => (
 
 const Text = ({ content }) => (
 	<div className={styles.text}>
-		{content.replace('_', ' ')}
+		{content}
 	</div>
 );
 
 class NavBarElement extends PureComponent {
 	static propTypes = {
-		active: PropTypes.string.isRequired,
+		active: PropTypes.bool.isRequired,
 		name: PropTypes.string.isRequired,
-		onClick: PropTypes.func.isRequired
+		onClick: PropTypes.func.isRequired,
+		pathName: PropTypes.string.isRequired
 	}
 
 	render() {
-		const { active, name, onClick } = this.props;
+		const {
+			active, pathName, name, onClick
+		} = this.props;
 
 		return (
 			<Link
@@ -30,9 +33,8 @@ class NavBarElement extends PureComponent {
 					`${styles.element} 
 						${active && styles.activeEl}`
 				}
-				to={name}
-				role="presentation"
-				onClick={() => onClick(name)}
+				to={pathName}
+				onClick={() => onClick(pathName)}
 			>
 				<Text content={name} />
 				<BottomBorderElem active={active} />
