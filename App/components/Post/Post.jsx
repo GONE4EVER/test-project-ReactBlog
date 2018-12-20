@@ -4,18 +4,13 @@ import Heading from './Heading';
 import Content from './Content';
 
 import styles from './Post.css';
+import Likes from './Likes';
 
-
-const Footer = props => (
-	<div className="col s12 ">
-		<Comments {...props} />
-	</div>
-);
 
 const Post = ({
-	time, authorID, heading, img, text, ...rest
+	time, authorID, heading, img, text, comments, ...rest
 }) => (
-	<article className="col s12">
+	<article className={`col s12 ${styles.post}`}>
 		<section className={`section ${styles.noTop}`}>
 			<Heading
 				time={time}
@@ -24,8 +19,11 @@ const Post = ({
 			/>
 			<Content img={img} text={text} />
 		</section>
-		<Footer {...rest} />
-		<div className="divider col s12" />
+		<div className={`col s12 ${styles.footer}`}>
+			<Comments comments={comments} />
+			<Likes {...rest} />
+		</div>
+		<section className="divider col s12" />
 	</article>
 );
 

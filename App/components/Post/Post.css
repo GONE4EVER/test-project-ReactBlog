@@ -1,3 +1,64 @@
+.post {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  height: 150px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;  
+}
+
+.assessment {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2em;
+
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.totalLikes {
+  text-align: center;
+  width: 2em
+}
+
+.comments{
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.comments:hover{
+  color: #ee6e73;
+}
+
+.headerFontSize {
+  font-size: 1.5rem;
+}
+
+.imgContainer {
+  height: 140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: 50%
+}
+
+.spanText {
+  padding-left: 0.3em;
+  font-size: 1.2rem;
+}
+
 .noTop {
   padding-top: 0px;
   margin-top: 0px;
@@ -6,23 +67,5 @@
 .noBottom {
   padding-bottom: 0px;
   margin-bottom: 0px;
-}
-
-.ico{
-  font-size: 2em;
-  cursor: pointer;
-}
-
-.ico:hover{
-  color: #ee6e73;
-}
-
-.headerFontSize {
-  font-size: 1.5em;
-}
-
-.imgContainer {
-  height: 140px;
-  background-repeat: no-repeat;
 }
 

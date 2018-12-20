@@ -10,7 +10,7 @@ const Heading = ({ authorID, heading, time }) => (
     	<h6 className="col s2">{authorID}</h6>
 		</header>
 		<header className={`row ${styles.headerFontSize}`}>
-			<b className="col s12">{heading}</b>
+			<b className={`col s12 ${styles.cursorPointer}`}>{heading}</b>
 		</header>
 	</React.Fragment>
 );

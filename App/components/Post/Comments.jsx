@@ -3,29 +3,23 @@ import PropTypes from 'prop-types';
 
 import styles from './Post.css';
 
-const Comments = ({ comments, likes, dislikes }) => (
-	<React.Fragment>
+const Comments = ({ comments }) => (
+	<div className={`col s1 ${styles.comments}`}>
 		<div
 			name="commentsIcon"
-			className={`fa fa-comments ${styles.ico}`}
+			className="fa fa-comments "
 			aria-hidden="true"
 		/>
-		<span>
-			{comments.length}
+		<span className={styles.spanText}>
+			<b>{comments.length}</b>
 		</span>
-	</React.Fragment>
+	</div>
 );
 
 Comments.propTypes = {
 	comments: PropTypes.arrayOf(
 		PropTypes.string.isRequired
 	).isRequired,
-	likes: PropTypes.arrayOf(
-		PropTypes.string.isRequired
-	).isRequired,
-	dislikes: PropTypes.arrayOf(
-		PropTypes.string.isRequired
-	).isRequired
 };
 
 export default Comments;

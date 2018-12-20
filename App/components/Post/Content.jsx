@@ -12,11 +12,12 @@ const Content = ({ img, text }) => (
 				style={{ backgroundImage: `url(${img})` }}
 			/>
 		</div>
-		<section className="col s9">
+		<section className={`col s9 ${styles.content}`}>
 			{text}
 		</section>
 	</React.Fragment>
 );
+
 
 Content.propTypes = {
 	img: PropTypes.string.isRequired,

@@ -3,6 +3,7 @@ import React from 'react';
 import images from '../../resources/images.json';
 import FullSizeImage from '../FullSizeImage';
 import PostsList from '../PostsList';
+import SelectCategory from '../SelectCategory';
 
 
 const Main = () => (
@@ -15,9 +16,7 @@ const Main = () => (
 		</div>
 		<div className="row">
 			<PostsList />
-			<div className="col s2">
-				{'Select'}
-			</div>
+			<SelectCategory />
 		</div>
 
 	</main>
