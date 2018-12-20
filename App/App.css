@@ -8,8 +8,22 @@ body {
 }
 
 .AppContainer {
-  /* margin-top: var(--headerHeight); */
+  margin-top: var(--headerHeight);
 }
 
+.AppHeader {  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
 
+  height: var(--headerHeight);
+  width: 100%;
+  z-index: 1000;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #282c34;
+  color: white;
+}

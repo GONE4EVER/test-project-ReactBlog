@@ -12,18 +12,28 @@ import Error from './components/Error';
 import styles from './App.css';
 
 
+const Header = () => (
+	<header className={styles.AppHeader}>
+		<NavBar />
+	</header>
+);
+
+const AppContainer = () => (
+	<div className={styles.AppContainer}>
+		<Switch>
+			<Redirect exact from="/" to="/main" />
+			<Route exact path="/main" component={Main} />
+			<Route path="/create_post" component={CreatePost} />
+			<Route component={Error} />
+		</Switch>
+	</div>
+);
+
 const App = () => (
 	<Router>
 		<React.Fragment>
-			<NavBar />
-			<div className={styles.AppContainer}>
-				<Switch>
-					<Redirect exact from="/" to="/main" />
-					<Route exact path="/main" component={Main} />
-					<Route path="/create_post" component={CreatePost} />
-					<Route component={Error} />
-				</Switch>
-			</div>
+			<Header />
+			<AppContainer />
 		</React.Fragment>
 	</Router>
 );

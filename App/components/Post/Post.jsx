@@ -8,7 +8,7 @@ import styles from './Post.css';
 
 const Footer = props => (
 	<div className="col s12 ">
-		<Comments {...props}/>
+		<Comments {...props} />
 	</div>
 );
 
@@ -17,12 +17,12 @@ const Post = ({
 }) => (
 	<article className="col s12">
 		<section className={`section ${styles.noTop}`}>
-			<Heading 
+			<Heading
 				time={time}
 				authorID={authorID}
 				heading={heading}
 			/>
-			<Content img={img} text={text}/>
+			<Content img={img} text={text} />
 		</section>
 		<Footer {...rest} />
 		<div className="divider col s12" />
