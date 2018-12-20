@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { posts } from '../../resources/posts.json';
 import images from '../../resources/images.json';
-import FullSizeImage from './FullSizeImage';
+import FullSizeImage from '../FullSizeImage';
+import PostsList from '../PostsList';
 
 
 const Main = () => (
@@ -13,6 +13,13 @@ const Main = () => (
 				<h3 className="left-align">Recent posts</h3>
 			</div>
 		</div>
+		<div className="row">
+			<PostsList />
+			<div className="col s2">
+				{'Select'}
+			</div>
+		</div>
+
 	</main>
 );
 

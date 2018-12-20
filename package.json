@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.0.0",
     "copy-webpack-plugin": "^4.6.0",
+    "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^3.2.0",
     "immutable": "^4.0.0-rc.12",
     "materialize-css": "^1.0.0-rc.2",
@@ -20,7 +21,7 @@
   "scripts": {
     "build": "react-scripts build",
     "wb": "webpack",
-    "wds": "webpack-dev-server --port=8082",
+    "wds": "webpack-dev-server",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"

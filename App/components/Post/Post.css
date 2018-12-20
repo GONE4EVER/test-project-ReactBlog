@@ -1,0 +1,33 @@
+.noTop {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.noBottom {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.noLeft {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.ico{
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.ico:hover{
+  color: #ee6e73;
+}
+
+.headerFontSize {
+  font-size: 1.5em;
+}
+
+.imgContainer {
+  height: 140px;
+  background-repeat: no-repeat;
+}
+

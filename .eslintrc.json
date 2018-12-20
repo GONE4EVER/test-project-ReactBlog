@@ -28,6 +28,11 @@
         "no-tabs": "off",
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
-        "indent": ["error", "tab"]
+        "indent": ["error", "tab"],
+        "jsx-a11y/label-has-for": [ "error", {
+            "required": {
+              "some": [ "nesting", "id"  ]
+            }
+          }]
     }
 }

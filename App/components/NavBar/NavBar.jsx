@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavBarElement from './NavBarElement';
-import navTabs from './tabs';
+import NavBarElement from '../NavBarElement';
+import navTabs from '../../tabs';
 
 import styles from './NavBar.css';
 
