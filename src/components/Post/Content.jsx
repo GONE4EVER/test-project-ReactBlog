@@ -5,17 +5,14 @@ import styles from './Post.css';
 
 
 const Content = ({ img, text }) => (
-	<React.Fragment>
-		<div className="col s2">
-			<div
-				className={styles.imgContainer}
-				style={{ backgroundImage: `url(${img})` }}
-			/>
+	<p className={`row ${styles.content}`}>
+		<div className={`col-2 ${styles.imgContainer}`}>
+			<img src={img}/>
 		</div>
-		<section className={`col s9 ${styles.content}`}>
+		<p className={`col-10 ${styles.text}`}>
 			{text}
-		</section>
-	</React.Fragment>
+		</p>
+	</p>
 );
 
 

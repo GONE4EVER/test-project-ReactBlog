@@ -7,16 +7,13 @@ import styles from './Post.css';
 const Heading = ({
 	id, authorID, heading, time
 }) => (
-	<React.Fragment>
-		<header className={`row ${styles.noBottom}`}>
-    	<h6 className="col s2">{time}</h6>
-    	<h6 className="col s2">{authorID}</h6>
-		</header>
-		<header className={`row ${styles.headerFontSize}`}>
-			<Link to={`/posts/${id}`} >
-				<b className={`col s12 ${styles.cursorPointer}`}>{heading}</b>
-			</Link>
-		</header>
+	<React.Fragment>		
+		<Link to={`/posts/${id}`} >
+				<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
+		</Link>
+		<p className="blog-post-meta">
+	  	<b>{time}</b> by <a href="/">{authorID}</a>
+		</p>
 	</React.Fragment>
 );
 

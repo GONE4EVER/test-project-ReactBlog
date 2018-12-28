@@ -93,7 +93,7 @@ module.exports = {
 				to: 'static/fonts/'
 			},
 			{
-				from: './node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
+				from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
 				to: 'static/css'
 			}
 		])

@@ -7,6 +7,10 @@ body {
   --headerHeight: 60px;
 }
 
+a:hover {
+  text-decoration: none
+}
+
 .AppContainer {
   margin-top: var(--headerHeight);
 }

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
   font-size: 1.2em;
   cursor: pointer;
@@ -11,14 +12,14 @@
   width: 50%;
 }
 
-.activeEl {
-  color: rgb(255, 255, 255);
+element:hover {
+  text-decoration: none;
 }
 
 .text {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  color: white;
   
   height: 100%;
 }

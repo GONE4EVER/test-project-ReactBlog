@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { arch } from 'os';
 import NavBarElement from '../NavBarElement';
 import navTabs from '../../App/tabs';
 

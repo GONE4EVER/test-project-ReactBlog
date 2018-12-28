@@ -10,21 +10,19 @@ import Likes from './Likes';
 const Post = ({
 	id, time, authorID, heading, img, text, comments, onClick, ...rest
 }) => (
-	<article className={`col s12 ${styles.post}`}>
-		<section className={`section ${styles.noTop}`}>
-			<Heading
+	<article className={`blog-post ${styles.post}`}>
+		<Heading
 				time={time}
 				authorID={authorID}
 				heading={heading}
 				id={id}
 			/>
-			<Content img={img} text={text} />
-		</section>
-		<footer className={`col s12 ${styles.footer}`}>
+		<Content img={img} text={text} />
+		<footer className={styles.footer}>
 			<Comments comments={comments} />
 			<Likes {...rest} />
 		</footer>
-		<section className="divider col s12" />
+		<hr/>
 	</article>
 );
 

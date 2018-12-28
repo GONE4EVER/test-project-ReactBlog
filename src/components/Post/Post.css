@@ -1,6 +1,6 @@
 .post {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 .footer {
@@ -9,10 +9,17 @@
 }
 
 .content {
-  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: flex-start
+}
+
+.text {
+  max-height: 144px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;  
 }
 
@@ -21,7 +28,6 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 2em;
-
 }
 
 .cursorPointer {
@@ -48,10 +54,11 @@
 }
 
 .imgContainer {
-  height: 140px;
   background-repeat: no-repeat;
-  background-position: center;
-  vertical-align: 50%
+  background-position-x: center;
+  vertical-align: 50%;
+  overflow: hidden;
+  padding-top: 0.25em;
 }
 
 .spanText {

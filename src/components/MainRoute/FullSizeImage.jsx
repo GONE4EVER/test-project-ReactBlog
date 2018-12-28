@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './MainRoute.css'
 
 const FullSizeImage = ({ imgSrc }) => (
-	<div className="card-image hoverable">
-		<img
-			className="responsive-img"
+	<div  className={styles.img}>
+		<img			
 			src={imgSrc}
 			alt=""
 		/>

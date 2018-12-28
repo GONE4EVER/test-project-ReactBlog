@@ -30,8 +30,7 @@ class NavBarElement extends PureComponent {
 		return (
 			<Link
 				className={
-					`${styles.element} 
-						${active && styles.activeEl}`
+					`${styles.element}`
 				}
 				to={`/${pathName}`}
 				onClick={() => onClick(pathName)}
