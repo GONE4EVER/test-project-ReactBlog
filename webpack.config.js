@@ -85,16 +85,16 @@ module.exports = {
 		new HtmlWebpackPlugin({ template: './index.html' }),
 		new CopyWebpackPlugin([
 			{
-				from: './node_modules/materialize-css/dist/css/materialize.min.css',
-				to: 'static/css/'
-			},
-			{
 				from: './node_modules/font-awesome/css/font-awesome.min.css',
 				to: 'static/css/'
 			},
 			{
 				from: './node_modules/font-awesome/fonts/',
 				to: 'static/fonts/'
+			},
+			{
+				from: './node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
+				to: 'static/css'
 			}
 		])
 	]
