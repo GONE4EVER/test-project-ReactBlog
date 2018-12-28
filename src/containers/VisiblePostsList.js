@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { VisiblePosts } from '../actions';
 import PostsList from '../components/PostsList';
 
-const getVisiblePosts = (posts, filter = VisiblePosts.SHOW_ALL) => {
+const getVisiblePosts = (posts, filter = VisiblePosts.SHOW_ALL_POSTS) => {
 	switch (filter) {
 		case VisiblePosts.SHOW_POSTS_BY_CATEGORY:
 			return posts.filter(post => post.categoryID === filter.id);

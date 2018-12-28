@@ -1,7 +1,11 @@
 .img {
   box-sizing: border-box;
-
+  
   max-height: 300px;
   overflow: hidden;
   position: relative;
+}
+
+.container {
+  width: 100%
 }

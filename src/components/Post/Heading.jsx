@@ -8,9 +8,12 @@ const Heading = ({
 	id, authorID, heading, time
 }) => (
 	<React.Fragment>		
-		<Link to={`/posts/${id}`} >
-				<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
-		</Link>
+		<div className={styles.headerFlex}>
+			<Link to={`/posts/${id}`} >
+					<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
+			</Link>
+			<div className={styles.headSpacer}></div>
+		</div>
 		<p className="blog-post-meta">
 	  	<b>{time}</b> by <a href="/">{authorID}</a>
 		</p>

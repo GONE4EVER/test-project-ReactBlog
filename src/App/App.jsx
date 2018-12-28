@@ -15,6 +15,7 @@ import NavBar from '../components/NavBar/NavBar';
 import reducers from '../reducers';
 
 import posts from '../resources/posts.json';
+import categories from '../resources/categories.json'
 import styles from './App.css';
 
 const Header = () => (
@@ -40,7 +41,7 @@ const AppContainer = () => (
 
 const App = () => (
 	<Provider store={createStore(reducers, {
-		posts, currentCategory: 'SHOW_ALL'
+		posts, currentCategory: 'SHOW_ALL_POSTS', categories
 	})}>
 		<Router>
 			<React.Fragment>

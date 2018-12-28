@@ -1,7 +1,7 @@
 import actionTypes from './actionTypes';
 
 export const VisiblePosts = {
-	SHOW_ALL: actionTypes.SHOW_ALL,
+	SHOW_ALL_POSTS: actionTypes.SHOW_ALL_POSTS,
 	SHOW_POSTS_BY_CATEGORY: actionTypes.SHOW_POSTS_BY_CATEGORY
 };
 

@@ -5,7 +5,7 @@ import styles from './MainRoute.css'
 
 const FullSizeImage = ({ imgSrc }) => (
 	<div  className={styles.img}>
-		<img			
+		<img	
 			src={imgSrc}
 			alt=""
 		/>

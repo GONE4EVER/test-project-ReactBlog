@@ -5,14 +5,14 @@ import styles from './Post.css';
 
 
 const Content = ({ img, text }) => (
-	<p className={`row ${styles.content}`}>
+	<div className={`row ${styles.content}`}>
 		<div className={`col-2 ${styles.imgContainer}`}>
 			<img src={img}/>
 		</div>
 		<p className={`col-10 ${styles.text}`}>
 			{text}
 		</p>
-	</p>
+	</div>
 );
 
 

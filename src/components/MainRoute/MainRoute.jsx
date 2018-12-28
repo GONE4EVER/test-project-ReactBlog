@@ -3,19 +3,20 @@ import { Route } from 'react-router-dom';
 
 import FullSizeImage from './FullSizeImage';
 import SelectCategory from '../SelectCategory/SelectCategory';
+import Categories from '../../containers/Categories'
 import VisiblePostsList from '../../containers/VisiblePostsList'
 
 import images from '../../resources/images.json';
 import styles from './MainRoute.css'
 
 const Container = () => (
-	<div className="">
+	<React.Fragment>
 		<FullSizeImage imgSrc={images.imgSrc} />
-		<div className="row">
+		<div className={`row ${styles.container}`}>
 			<VisiblePostsList />
-			<SelectCategory />
+			<Categories />
 		</div>
-	</div>
+	</React.Fragment>
 );
 
 const Main = () => (

@@ -76,3 +76,10 @@
   margin-bottom: 0px;
 }
 
+.headerFlex {
+  display: flex;
+}
+
+.headSpacer {
+  flex-grow: 8
+}
