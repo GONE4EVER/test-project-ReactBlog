@@ -41,7 +41,7 @@ const AppContainer = () => (
 
 const App = () => (
 	<Provider store={createStore(reducers, {
-		posts, currentCategory: 'SHOW_ALL_POSTS', categories
+		posts, categories: {content: categories, currentCategory: null} 
 	})}>
 		<Router>
 			<React.Fragment>

@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
 import categories from './categories';
-import posts from './postsList';
-import currentCategory from './currentCategory';
+import posts from './posts';
 
 export default combineReducers({
 	categories,
 	posts,
-	currentCategory
 });

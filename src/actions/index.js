@@ -2,7 +2,6 @@ import actionTypes from './actionTypes';
 
 export const VisiblePosts = {
 	SHOW_ALL_POSTS: actionTypes.SHOW_ALL_POSTS,
-	SHOW_POSTS_BY_CATEGORY: actionTypes.SHOW_POSTS_BY_CATEGORY
 };
 
 export const GetPostById = id => ({
@@ -10,7 +9,7 @@ export const GetPostById = id => ({
 	id
 });
 
-export const ShowPostsByCategory = id => ({
+export const ShowPostsByCategory = filter => ({
 	type: actionTypes.SHOW_POSTS_BY_CATEGORY,
-	filter: id
+	filter
 });

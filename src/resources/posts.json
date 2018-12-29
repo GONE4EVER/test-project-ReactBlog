@@ -14,7 +14,8 @@
     ],
     "dislikes": [
       "userID_4"
-    ]
+    ],
+    "categoryID": "DOKA_2"
   },
   {
     "id": "postID_2",
@@ -29,9 +30,8 @@
     "likes": [
       "userID_1", "userID_2", "userID_3", "userID_4"
     ],
-    "dislikes": [
-      
-    ]
+    "dislikes": [],
+    "categoryID": "MOVIES"
   },
   {
     "id": "postID_3",
@@ -48,6 +48,7 @@
     ],
     "dislikes": [
       "userID_3", "userID_4", "userID_2"
-    ]
+    ],
+    "categoryID": "DOKA_2"
   }
 ]
