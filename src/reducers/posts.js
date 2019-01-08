@@ -6,22 +6,21 @@ const {
 	GET_POST_BY_ID
 } = actionTypes;
 
-const posts = (state = [], action) => {
+const posts = (state = { content: [] }, action) => {
+	const { content } = state;
+
 	switch (action.type) {
+	// !!!
 	case CREATE_POST:
 		return {
-			...state,
-			id: action.id
+			...state
 		};
 
 	case DELETE_POST:
-		return state.reduce((acc, post) => {
-			if (post.id !== action.id) { acc.push(post); }
-			return acc;
-		}, []);
+		return content.filter(post => post.id !== action.id);
 
 	case GET_POST_BY_ID:
-		return state.find(post => post.id === action.id);
+		return content.find(post => post.id === action.id);
 
 	default:
 		return state;

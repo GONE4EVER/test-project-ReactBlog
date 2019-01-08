@@ -3,7 +3,7 @@ import SelectCategory from '../components/SelectCategory';
 import { ShowPostsByCategory } from '../actions';
 
 const mapStateToProps = state => ({
-	categories: state.categories.content
+	categories: state.categories
 });
 
 const mapDispatchToProps = dispatch => ({

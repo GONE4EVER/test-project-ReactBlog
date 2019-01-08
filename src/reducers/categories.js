@@ -7,7 +7,7 @@ const {
 	DELETE_CATEGORY,
 } = actionTypes;
 
-const categories = (state = [], action) => {
+const categories = (state = { content: [], currentCategory: null }, action) => {
 	const { content } = state;
 
 	switch (action.type) {

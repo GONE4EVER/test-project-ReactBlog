@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 
 
 import styles from './PostRoute.css';
+import Main from '../MainRoute/MainRoute';
 
-const PostRoute = ({ match }) => {
-	const { id } = match.params; // !!!
+
+const Container = ({ match }) => {
+	const { id } = match.params;
 
 	return (
 		<article className="col s12">
@@ -20,7 +22,14 @@ const PostRoute = ({ match }) => {
 	);
 };
 
-PostRoute.propTypes = {
+const PostRoute = () => (
+	<Switch>
+		<Route exact path="/posts/:id" component={Container} />
+		<Route exact path="/posts/category/:id" component={Main} />
+	</Switch>
+);
+
+Container.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
 			id: PropTypes.string.isRequired

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { VisiblePosts } from '../actions';
 import PostsList from '../components/PostsList';
 
 const getVisiblePosts = (posts, filter) => {
@@ -8,7 +7,7 @@ const getVisiblePosts = (posts, filter) => {
 };
 
 const mapStateToProps = state => ({
-	posts: getVisiblePosts(state.posts, state.categories.currentCategory)
+	posts: getVisiblePosts(state.posts.content, state.categories.currentCategory)
 });
 
 
