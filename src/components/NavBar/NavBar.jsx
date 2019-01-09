@@ -13,21 +13,14 @@ class NavBar extends Component {
 	}
 
 	switchTab = (nextTab) => {
-		this.setState((currState) => {
-			const { active } = currState;
-
-			if (active !== nextTab) {
-				return { active: nextTab };
-			}
-			return {};
-		});
+		this.setState(({ active }) => (active !== nextTab ? { active: nextTab } : {}));
 	}
 
 	render() {
 		const { active } = this.state;
 
 		return (
-			<nav className={styles.NavBar}>
+			<nav className={`${styles.AppHeader} ${styles.NavBar}`}>
 				{navTabs.map(({ name, pathName }) => (
 					<NavBarElement
 						key={name}

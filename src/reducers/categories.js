@@ -9,13 +9,14 @@ const {
 
 const categories = (state = { content: [], currentCategory: null }, action) => {
 	const { content } = state;
+	const { type, payload } = action;
 
-	switch (action.type) {
+	switch (type) {
 	case SHOW_ALL_CATEGORIES:
 		return state;
 
 	case SHOW_POSTS_BY_CATEGORY:
-		const newCategory = content.find(category => category.id === action.filter);
+		const newCategory = content.find(category => category.id === payload.filter);
 
 		return {
 			...state,
@@ -26,13 +27,13 @@ const categories = (state = { content: [], currentCategory: null }, action) => {
 	case CREATE_CATEGORY:
 		return {
 			...state,
-			id: action.id
+			id: payload.id
 		};
 
 		// !!!
 	case DELETE_CATEGORY:
 		return state.reduce((acc, category) => {
-			if (category.id !== action.id) { acc.push(category); }
+			if (category.id !== payload.id) { acc.push(category); }
 		}, []);
 
 	default:

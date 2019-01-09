@@ -6,10 +6,14 @@ export const VisiblePosts = {
 
 export const GetPostById = id => ({
 	type: actionTypes.GET_POST_BY_ID,
-	id
+	payload: {
+		id
+	}
 });
 
 export const ShowPostsByCategory = filter => ({
 	type: actionTypes.SHOW_POSTS_BY_CATEGORY,
-	filter
+	payload: {
+		filter
+	}
 });

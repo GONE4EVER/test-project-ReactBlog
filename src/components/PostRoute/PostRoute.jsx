@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Switch, Route } from 'react-router-dom';
 
-
-import styles from './PostRoute.css';
 import Main from '../MainRoute/MainRoute';
+
+import routes from '../../App/routeNames';
+import styles from './PostRoute.css';
 
 
 const Container = ({ match }) => {
@@ -15,7 +16,7 @@ const Container = ({ match }) => {
 			<div
 				className={styles.imgContainer}
 			/>
-			<Link to="/main">Back</Link>
+			<Link to={routes.MAIN}>Back</Link>
 			<br />
 			<span>{id}</span>
 		</article>
@@ -24,8 +25,8 @@ const Container = ({ match }) => {
 
 const PostRoute = () => (
 	<Switch>
-		<Route exact path="/posts/:id" component={Container} />
-		<Route exact path="/posts/category/:id" component={Main} />
+		<Route exact path={`${routes.POSTS}:id`} component={Container} />
+		<Route exact path={`${routes.POSTS_BY_CATEGORY}:id`} component={Container} />
 	</Switch>
 );
 

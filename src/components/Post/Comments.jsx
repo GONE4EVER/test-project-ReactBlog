@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Post.css';
 
 const Comments = ({ comments }) => (
-	<div className={`col ${styles.comments}`}>
+	<div className={`col-1 ${styles.comments}`}>
 		<div
 			name="commentsIcon"
 			className="fa fa-comments "

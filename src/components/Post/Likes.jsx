@@ -7,7 +7,7 @@ const Likes = ({ likes, dislikes }) => {
 	const total = likes.length - dislikes.length;
 
 	return (
-		<div className={styles.assessment}>
+		<div className={`col-11 ${styles.assessment}`}>
 			<i
 				className={`fa fa-caret-up ${styles.cursorPointer}`}
 				aria-hidden="true"

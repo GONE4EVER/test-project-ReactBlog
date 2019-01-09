@@ -39,13 +39,17 @@
   width: 2em
 }
 
-.comments{
+.comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 2em;
   cursor: pointer;
   padding: 0px;
 }
 
-.comments:hover{
+.comments:hover {
   color: #ee6e73;
 }
 

@@ -8,8 +8,9 @@ const {
 
 const posts = (state = { content: [] }, action) => {
 	const { content } = state;
+	const { type, payload } = action;
 
-	switch (action.type) {
+	switch (type) {
 	// !!!
 	case CREATE_POST:
 		return {
@@ -17,10 +18,10 @@ const posts = (state = { content: [] }, action) => {
 		};
 
 	case DELETE_POST:
-		return content.filter(post => post.id !== action.id);
+		return content.filter(post => post.id !== payload.id);
 
 	case GET_POST_BY_ID:
-		return content.find(post => post.id === action.id);
+		return content.find(post => post.id === payload.id);
 
 	default:
 		return state;

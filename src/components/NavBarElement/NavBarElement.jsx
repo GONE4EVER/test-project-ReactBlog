@@ -4,15 +4,6 @@ import { Link } from 'react-router-dom';
 
 import styles from './NavBarElement.css';
 
-const BottomBorderElem = ({ active }) => (
-	<span className={`${styles.border} ${active && styles.activeBorder}`} />
-);
-
-const Text = ({ content }) => (
-	<div className={styles.text}>
-		{content}
-	</div>
-);
 
 class NavBarElement extends PureComponent {
 	static propTypes = {
@@ -36,20 +27,14 @@ class NavBarElement extends PureComponent {
 				onClick={() => onClick(pathName)}
 				replace
 			>
-				<Text content={name} />
-				<BottomBorderElem active={active} />
+				<div className={styles.text}>
+					{name}
+				</div>
+				<span className={`${styles.border} ${active && styles.activeBorder}`} />
 			</Link>
 		);
 	}
 }
 
-
-Text.propTypes = {
-	content: PropTypes.string.isRequired
-};
-
-BottomBorderElem.propTypes = {
-	active: PropTypes.bool.isRequired
-};
 
 export default NavBarElement;
