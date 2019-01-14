@@ -32,9 +32,7 @@ const categories = (state = { content: [], currentCategory: null }, action) => {
 
 		// !!!
 	case DELETE_CATEGORY:
-		return state.reduce((acc, category) => {
-			if (category.id !== payload.id) { acc.push(category); }
-		}, []);
+		return state.filter(category => category.id !== payload.id);
 
 	default:
 		return state;

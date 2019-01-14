@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Switch, Route } from 'react-router-dom';
 
-import Main from '../MainRoute/MainRoute';
-
 import routes from '../../App/routeNames';
 import styles from './PostRoute.css';
 

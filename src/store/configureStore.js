@@ -1,6 +1,5 @@
-if (process.env) {
-	console.log(process.env);
+if (true) { // !!!
 	module.exports = require('./configureStore.dev');
 } else {
-	module.exports = require('./configureStore.dev'); // !!!
+	// module.exports = require('./configureStore.dev');
 }

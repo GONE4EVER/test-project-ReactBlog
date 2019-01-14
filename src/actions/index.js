@@ -17,3 +17,11 @@ export const ShowPostsByCategory = filter => ({
 		filter
 	}
 });
+
+export const CreatePost = content => ({
+	type: actionTypes.CREATE_POST,
+	payload: {
+		...content,
+		createdAt: Date.now()
+	}
+});

@@ -10,13 +10,13 @@ import Likes from './Likes';
 class Post extends PureComponent {
 	render() {
 		const {
-			id, time, authorID, heading, img, text, comments, onClick, ...rest
+			id, createdAt, authorID, heading, img, text, comments, onClick, ...rest
 		} = this.props;
 
 		return (
 			<article className={`blog-post ${styles.post}`}>
 				<Heading
-					time={time}
+					createdAt={createdAt}
 					authorID={authorID}
 					heading={heading}
 					id={id}

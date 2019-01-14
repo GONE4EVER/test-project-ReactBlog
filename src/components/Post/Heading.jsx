@@ -6,7 +6,7 @@ import routes from '../../App/routeNames';
 import styles from './Post.css';
 
 const Heading = ({
-	id, authorID, heading, time
+	id, authorID, heading, createdAt
 }) => (
 	<React.Fragment>
 		<div className={styles.headerFlex}>
@@ -16,7 +16,7 @@ const Heading = ({
 			<div className={styles.headSpacer} />
 		</div>
 		<p className="blog-post-meta">
-			<b>{time}</b>
+			<b>{createdAt}</b>
 			{' by '}
 			<a href="/">{authorID}</a>
 		</p>
@@ -27,7 +27,7 @@ Heading.propTypes = {
 	id: PropTypes.string.isRequired,
 	authorID: PropTypes.string.isRequired,
 	heading: PropTypes.string.isRequired,
-	time: PropTypes.string.isRequired
+	createdAt: PropTypes.string.isRequired
 };
 
 export default Heading;

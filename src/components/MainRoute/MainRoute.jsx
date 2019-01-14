@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FullSizeImage from './FullSizeImage';
-import Categories from '../../containers/Categories';
+import CategoriesSelect from '../../containers/CategoriesSelect';
 import VisiblePostsList from '../../containers/VisiblePostsList';
 
 import images from '../../resources/images.json';
@@ -14,7 +14,7 @@ const Main = () => (
 			<FullSizeImage imgSrc={images.imgSrc} />
 			<div className={`row ${styles.container}`}>
 				<VisiblePostsList />
-				<Categories />
+				<CategoriesSelect />
 			</div>
 		</React.Fragment>
 	</main>

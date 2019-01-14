@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-import CreatePost from '../components/CreatePostRoute';
+import CreatePost from '../containers/CreatePost';
+
 import Main from '../components/MainRoute';
 import Post from '../components/PostRoute';
 import Error from '../components/ErrorRoute';
@@ -35,7 +36,6 @@ const App = () => (
 	<Provider store={store}>
 		<Router>
 			<React.Fragment>
-
 				<NavBar />
 				<AppContainer />
 			</React.Fragment>
