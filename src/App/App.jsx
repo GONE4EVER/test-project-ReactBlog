@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-import CreatePost from '../containers/CreatePost';
+import CreatePostRoute from '../components/CreatePostRoute';
 
 import Main from '../components/MainRoute';
 import Post from '../components/PostRoute';
@@ -22,7 +22,7 @@ const AppContainer = () => (
 	<div className={styles.AppContainer}>
 		<Switch>
 			<Route exact path={routes.MAIN} component={Main} />
-			<Route exact path={routes.CREATE_POST} component={CreatePost} />
+			<Route exact path={routes.CREATE_POST} component={CreatePostRoute} />
 
 			<Route strict path={routes.POSTS} component={Post} />
 

@@ -7,27 +7,35 @@ import styles from './Post.css';
 
 const Heading = ({
 	id, authorID, heading, createdAt
-}) => (
-	<React.Fragment>
-		<div className={styles.headerFlex}>
-			<Link to={`${routes.POSTS}${id}`}>
-				<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
-			</Link>
-			<div className={styles.headSpacer} />
-		</div>
-		<p className="blog-post-meta">
-			<b>{createdAt}</b>
-			{' by '}
-			<a href="/">{authorID}</a>
-		</p>
-	</React.Fragment>
-);
+}) => {
+	const date = new Date(createdAt);
+
+	const day = date.getDate();
+	const month = date.toLocaleString('en-us', { month: 'long' });
+	const year = date.getFullYear();
+
+	return (
+		<React.Fragment>
+			<div className={styles.headerFlex}>
+				<Link to={`${routes.POSTS}${id}`}>
+					<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
+				</Link>
+				<div className={styles.headSpacer} />
+			</div>
+			<p className="blog-post-meta">
+				<b>{`${day} ${month} ${year}`}</b>
+				{' by '}
+				<Link to="/">{authorID}</Link>
+			</p>
+		</React.Fragment>
+	);
+};
 
 Heading.propTypes = {
 	id: PropTypes.string.isRequired,
 	authorID: PropTypes.string.isRequired,
 	heading: PropTypes.string.isRequired,
-	createdAt: PropTypes.string.isRequired
+	createdAt: PropTypes.number.isRequired
 };
 
 export default Heading;

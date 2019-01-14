@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { CreatePost } from '../actions';
-import CreatePostRoute from '../components/CreatePostRoute/CreatePostRoute';
+import Form from '../components/CreatePostRoute/Form';
 
 const mapStateToProps = state => ({
 	categories: state.categories.content
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(CreatePostRoute);
+)(Form);

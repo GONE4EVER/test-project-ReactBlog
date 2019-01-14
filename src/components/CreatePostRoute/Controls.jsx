@@ -1,43 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './CreatePostRoute.css';
 
-export const	AuthorInput = () => (
+const inputNames = {
+	author: 'authorID',
+	title: 'heading',
+	category: 'categoryID',
+	description: 'text'
+};
+
+const	AuthorInput = ({ onChange }) => (
 	<div className="form-group">
-		<label htmlFor="author-input">Author</label>
+		<label htmlFor={inputNames.author}>Author</label>
 		<input
 			placeholder="Type here..."
 			type="text"
-			id="author-input"
+			id={inputNames.author}
 			className="autocomplete form-control"
 			name="authorName"
+			onChange={(ev) => { onChange(inputNames.author, ev.target.value); }}
 		/>
 	</div>
 );
 
-export const TitleInput = () => (
+const TitleInput = ({ onChange }) => (
 	<div className="form-group">
-		<label htmlFor="title-input">Title</label>
+		<label htmlFor={inputNames.title}>Title</label>
 		<input
 			placeholder="Type here..."
 			type="text"
-			id="title-input"
+			id={inputNames.title}
 			className="autocomplete form-control"
 			name="heading"
+			onChange={(ev) => { onChange(inputNames.title, ev.target.value); }}
 		/>
 	</div>
 );
 
-export const CategorySelect = ({ content }) => (
+const CategorySelect = ({ content, onChange }) => (
 	<div className="form-group">
-		<label htmlFor="categories-select">Category</label>
+		<label htmlFor={inputNames.category}>Category</label>
 		<select
-			id="categories-select"
 			placeholder="Choose your option"
+			id={inputNames.category}
 			className="form-control"
 			name="categoryID"
+			defaultValue=""
+			onChange={(ev) => { onChange(inputNames.category, ev.target.value); }}
 		>
+			<option value="">Choose category...</option>
 			{content.map(item => (
 				<option
 					key={item.name}
@@ -51,13 +62,14 @@ export const CategorySelect = ({ content }) => (
 );
 
 
-export const Description = () => (
+const DescriptionArea = ({ onChange }) => (
 	<div className="form-group">
-		<label htmlFor="description-area">Description</label>
+		<label htmlFor={inputNames.description}>Description</label>
 		<textarea
-			id="description-area"
+			id={inputNames.description}
 			className="form-control"
 			rows="8"
+			onChange={(ev) => { onChange(inputNames.description, ev.target.value); }}
 		/>
 	</div>
 );
@@ -70,4 +82,12 @@ CategorySelect.propTypes = {
 			name: PropTypes.string.isRequired
 		})
 	).isRequired
+};
+
+export default inputNames;
+export {
+	AuthorInput,
+	TitleInput,
+	CategorySelect,
+	DescriptionArea
 };

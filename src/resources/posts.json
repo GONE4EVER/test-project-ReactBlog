@@ -2,7 +2,7 @@
   {
     "id": "postID_1",
     "heading": "Heading 228",
-    "createdAt": "12.12.2018",
+    "createdAt": 1247577508451,
     "authorID": "authorID_1",
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore!Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "img": "https://i.ytimg.com/vi/bEVeO4q8HkM/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCI6rX1v4LXr9DJ_nbIVRLgy_JxZg",
@@ -20,7 +20,7 @@
   {
     "id": "postID_2",
     "authorID": "authorID_2",
-    "createdAt": "11.12.2018",
+    "createdAt": 1577477206279,
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore!Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "heading": "Heading 2",
     "img": "https://i.ytimg.com/vi/_WJ79rKo44U/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBH9b9CqOH5R8ydbgBM1hvHUH5kAA",
@@ -36,7 +36,7 @@
   {
     "id": "postID_3",
     "authorID": "authorID_3",
-    "createdAt": "10.12.2018",
+    "createdAt": 1817477204629,
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiaminventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "heading": "HEADING 3",
     "img": "https://i.ytimg.com/vi/_Fpd_VGUViE/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLC3ed61JmNdMRBaAvZdan2_h1HgRw",

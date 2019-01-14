@@ -11,10 +11,10 @@ const posts = (state = { content: [] }, action) => {
 	const { type, payload } = action;
 
 	switch (type) {
-	// !!!
 	case CREATE_POST:
 		return {
-			...state
+			...state,
+			content: [payload, ...content]
 		};
 
 	case DELETE_POST:
