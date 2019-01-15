@@ -8,10 +8,11 @@ import { Provider } from 'react-redux';
 import store from '../store';
 
 import CreatePostRoute from '../components/CreatePostRoute';
+import ErrorRoute from '../components/ErrorRoute';
+import MainRoute from '../components/MainRoute';
+import ManagePostsRoute from '../components/ManagePostsRoute/ManagePostsRoute';
+import PostRoute from '../components/PostRoute';
 
-import Main from '../components/MainRoute';
-import Post from '../components/PostRoute';
-import Error from '../components/ErrorRoute';
 import NavBar from '../components/NavBar/NavBar';
 
 import routes from './routeNames';
@@ -21,13 +22,14 @@ import styles from './App.css';
 const AppContainer = () => (
 	<div className={styles.AppContainer}>
 		<Switch>
-			<Route exact path={routes.MAIN} component={Main} />
+			<Route exact path={routes.MAIN} component={MainRoute} />
 			<Route exact path={routes.CREATE_POST} component={CreatePostRoute} />
+			<Route exact path={routes.MANAGE_POSTS} component={ManagePostsRoute} />
 
-			<Route strict path={routes.POSTS} component={Post} />
+			<Route strict path={routes.POSTS} component={PostRoute} />
 
 			<Redirect exact from="/" to={routes.MAIN} />
-			<Route component={Error} />
+			<Route component={ErrorRoute} />
 		</Switch>
 	</div>
 );

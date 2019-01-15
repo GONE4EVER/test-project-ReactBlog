@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './ErrorRoute.css';
 
-const Error = () => (
+const ErrorRoute = () => (
 	<h1 className={styles.error}>
 		<b>Ooops! </b>
 		{'No such directory.'}
@@ -11,4 +11,4 @@ const Error = () => (
 	</h1>
 );
 
-export default Error;
+export default ErrorRoute;

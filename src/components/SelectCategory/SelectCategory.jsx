@@ -13,8 +13,8 @@ const SelectCategory = ({ categories, switchVisibility, history }) => {
 			<select
 				className={styles.select}
 				onChange={(ev) => {
+					switchVisibility(ev.target.value);
 					history.push(`${ev.target.value && routes.POSTS_BY_CATEGORY}${ev.target.value}`);
-					/* switchVisibility(ev.target.value); */
 				}}
 				defaultValue={currentCategory}
 			>

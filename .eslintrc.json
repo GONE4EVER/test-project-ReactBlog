@@ -29,11 +29,12 @@
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
         "indent": ["error", "tab"],
-        "jsx-a11y/label-has-for": [2, {
+        "jsx-a11y/label-has-for": [ 2, {
             "components": [ "Label" ],
             "required": {
                 "some": [ "nesting", "id" ]
-            }
+            },
+            "allowChildren": false
         }]
     }
 }

@@ -1,39 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+import { MainRouteContainer } from '../MainRoute';
 
 import routes from '../../App/routeNames';
-import styles from './PostRoute.css';
-
-
-const Container = ({ match }) => {
-	const { id } = match.params;
-
-	return (
-		<article className="col s12">
-			<div
-				className={styles.imgContainer}
-			/>
-			<Link to={routes.MAIN}>Back</Link>
-			<br />
-			<span>{id}</span>
-		</article>
-	);
-};
+import Container from './Container';
 
 const PostRoute = () => (
 	<Switch>
 		<Route exact path={`${routes.POSTS}:id`} component={Container} />
-		<Route exact path={`${routes.POSTS_BY_CATEGORY}:id`} component={Container} />
+		<Route exact path={`${routes.POSTS_BY_CATEGORY}:id`} component={MainRouteContainer} />
 	</Switch>
 );
 
-Container.propTypes = {
-	match: PropTypes.shape({
-		params: PropTypes.shape({
-			id: PropTypes.string.isRequired
-		}).isRequired
-	}).isRequired
-};
 
 export default PostRoute;

@@ -4,7 +4,7 @@ import CreatePostForm from '../../containers/CreatePostForm';
 import styles from './CreatePostRoute.css';
 
 
-const CreatePost = () => (
+const CreatePostRoute = () => (
 	<React.Fragment>
 		<h2 className={styles.header}>Create New Post</h2>
 		<div className={styles.content}>
@@ -13,4 +13,4 @@ const CreatePost = () => (
 	</React.Fragment>
 );
 
-export default CreatePost;
+export default CreatePostRoute;

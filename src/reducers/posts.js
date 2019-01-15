@@ -18,7 +18,10 @@ const posts = (state = { content: [] }, action) => {
 		};
 
 	case DELETE_POST:
-		return content.filter(post => post.id !== payload.id);
+		return {
+			...state,
+			content: content.filter(post => post.id !== payload.id)
+		};
 
 	case GET_POST_BY_ID:
 		return content.find(post => post.id === payload.id);

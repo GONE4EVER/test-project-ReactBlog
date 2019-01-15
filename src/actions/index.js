@@ -34,3 +34,10 @@ export const CreatePost = (content) => {
 		}
 	});
 };
+
+export const DeletePost = id => ({
+	type: actionTypes.DELETE_POST,
+	payload: {
+		id
+	}
+});

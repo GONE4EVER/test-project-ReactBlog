@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { CreatePost } from '../actions';
-import Form from '../components/CreatePostRoute/Form';
+import Form from '../components/CreatePostForm';
 
 const mapStateToProps = state => ({
 	categories: state.categories.content

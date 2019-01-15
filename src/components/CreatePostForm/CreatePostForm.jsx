@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import inputNames, {
-	AuthorInput,
-	TitleInput,
-	CategorySelect,
-	DescriptionArea
-} from './Controls';
-import styles from './CreatePostRoute.css';
+import AuthorInput from './AuthorInput';
+import styles from './CreatePostForm.css';
+import TitleInput from './TitleInput';
+import CategorySelect from './CategorySelect';
+import DescriptionArea from './DescriptionArea';
+
+const inputNames = {
+	author: 'authorID',
+	title: 'heading',
+	category: 'categoryID',
+	description: 'text'
+};
 
 export default class Form extends Component {
 	static propTypes = {
@@ -61,3 +66,5 @@ export default class Form extends Component {
 		);
 	}
 }
+
+export { inputNames };
