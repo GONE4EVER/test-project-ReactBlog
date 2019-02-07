@@ -22,7 +22,15 @@ export default class Form extends Component {
 				name: PropTypes.string.isRequired
 			})
 		).isRequired,
-		createPost: PropTypes.func.isRequired
+		createPost: PropTypes.func.isRequired,
+		history: PropTypes.shape({
+			push: PropTypes.func.isRequired
+		}).isRequired
+	}
+
+	constructor() {
+		super();
+		this.formRef = React.createRef();
 	}
 
 	state = {
@@ -39,11 +47,11 @@ export default class Form extends Component {
 	}
 
 	render() {
-		const { categories, createPost } = this.props;
+		const { categories, createPost, history } = this.props;
 
 		return (
 			<div className="col-6">
-				<form>
+				<form noValidate ref={this.formRef}>
 					<AuthorInput onChange={this.setInputState} />
 					<TitleInput onChange={this.setInputState} />
 					<CategorySelect content={categories} onChange={this.setInputState} />
@@ -54,8 +62,16 @@ export default class Form extends Component {
 							className="btn btn-primary"
 							style={{ width: '50%' }}
 							onClick={(ev) => {
-								createPost(this.getValues());
 								ev.preventDefault();
+
+								if (this.formRef.current.checkValidity() === false) {
+									this.formRef.current.classList.add('was-validated');
+									ev.stopPropagation();
+								} else {
+									createPost(this.getValues());
+
+									history.push('/main');
+								}
 							}}
 						>
 							{'Submit'}

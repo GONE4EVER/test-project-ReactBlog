@@ -8,6 +8,7 @@ const CategorySelect = React.memo(({ content, onChange }) => (
 	<div className="form-group">
 		<label htmlFor={inputNames.category}>Category</label>
 		<select
+			required
 			placeholder="Choose your option"
 			id={inputNames.category}
 			className="form-control"
@@ -25,6 +26,12 @@ const CategorySelect = React.memo(({ content, onChange }) => (
 				</option>
 			))}
 		</select>
+		<div className="valid-feedback">
+			{'Looks good!'}
+		</div>
+		<div className="invalid-feedback">
+			{'Please, select posts category'}
+		</div>
 	</div>
 ));
 
