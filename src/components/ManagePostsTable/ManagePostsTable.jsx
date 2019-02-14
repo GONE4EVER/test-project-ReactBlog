@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import TableRow from './TableRow';
+
 
 const ManagePostsTable = ({ posts, deletePost }) => (
 	<div className="col-8">
@@ -23,5 +26,13 @@ const ManagePostsTable = ({ posts, deletePost }) => (
 	</div>
 
 );
+
+
+ManagePostsTable.propTypes = {
+	posts: PropTypes.arrayOf(
+		PropTypes.shape()
+	).isRequired,
+	deletePost: PropTypes.func.isRequired
+};
 
 export default ManagePostsTable;

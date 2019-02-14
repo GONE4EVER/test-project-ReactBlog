@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Post.css';
 
+
 const Comments = ({ comments }) => (
 	<div className={`col-1 ${styles.comments}`}>
 		<div
@@ -15,6 +16,7 @@ const Comments = ({ comments }) => (
 		</span>
 	</div>
 );
+
 
 Comments.propTypes = {
 	comments: PropTypes.arrayOf(

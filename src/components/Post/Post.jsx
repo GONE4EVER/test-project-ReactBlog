@@ -1,10 +1,11 @@
 import React from 'react';
+
 import Comments from './Comments';
-import Heading from './Heading';
 import Content from './Content';
+import Heading from './Heading';
+import Likes from './Likes';
 
 import styles from './Post.css';
-import Likes from './Likes';
 
 
 const Post = React.memo(props => (

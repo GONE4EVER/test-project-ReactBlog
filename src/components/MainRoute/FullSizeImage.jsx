@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './MainRoute.css'
+import styles from './MainRoute.css';
+
 
 const FullSizeImage = ({ imgSrc }) => (
-	<div  className={styles.img}>
-		<img	
+	<div className={styles.img}>
+		<img
 			src={imgSrc}
 			alt=""
 		/>
@@ -16,5 +17,6 @@ const FullSizeImage = ({ imgSrc }) => (
 FullSizeImage.propTypes = {
 	imgSrc: PropTypes.string.isRequired
 };
+
 
 export default FullSizeImage;

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import PostsList from '../components/PostsList';
 
+
 const getVisiblePosts = (posts, filter) => {
-	if (filter) { return posts.filter(post => post.categoryID === filter); }
+	if (filter) { return posts.filter(post => post.categoryId === filter); }
 	return posts;
 };
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Post.css';
 
+
 const Likes = ({ likes, dislikes }) => {
 	const total = likes.length - dislikes.length;
 
@@ -24,6 +25,7 @@ const Likes = ({ likes, dislikes }) => {
 		</div>
 	);
 };
+
 
 Likes.propTypes = {
 	likes: PropTypes.arrayOf(

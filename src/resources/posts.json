@@ -3,7 +3,7 @@
     "id": "postID_1",
     "heading": "Heading 228",
     "createdAt": 1247577508451,
-    "authorID": "authorID_1",
+    "authorId": "authorId_1",
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore!Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "img": "https://i.ytimg.com/vi/bEVeO4q8HkM/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCI6rX1v4LXr9DJ_nbIVRLgy_JxZg",
     "comments": [
@@ -15,11 +15,11 @@
     "dislikes": [
       "userID_4"
     ],
-    "categoryID": "DOKA_2"
+    "categoryId": "DOKA_2"
   },
   {
     "id": "postID_2",
-    "authorID": "authorID_2",
+    "authorId": "authorId_2",
     "createdAt": 1577477206279,
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore!Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "heading": "Heading 2",
@@ -31,11 +31,11 @@
       "userID_1", "userID_2", "userID_3", "userID_4"
     ],
     "dislikes": [],
-    "categoryID": "MOVIES"
+    "categoryId": "MOVIES"
   },
   {
     "id": "postID_3",
-    "authorID": "authorID_3",
+    "authorId": "authorId_3",
     "createdAt": 1817477204629,
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiaminventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur odit aperiam inventore! Deserunt reprehenderit necessitatibus alias ratione. Quae vero saepe facere repudiandae magnam beatae accusamus aperiam suscipit unde praesentium. Expedita.",
     "heading": "HEADING 3",
@@ -49,6 +49,6 @@
     "dislikes": [
       "userID_3", "userID_4", "userID_2"
     ],
-    "categoryID": "DOKA_2"
+    "categoryId": "DOKA_2"
   }
 ]

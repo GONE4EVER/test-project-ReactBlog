@@ -7,10 +7,11 @@ import TitleInput from './TitleInput';
 import CategorySelect from './CategorySelect';
 import DescriptionArea from './DescriptionArea';
 
+
 const inputNames = {
-	author: 'authorID',
+	author: 'authorId',
 	title: 'heading',
-	category: 'categoryID',
+	category: 'categoryId',
 	description: 'text'
 };
 
@@ -35,9 +36,9 @@ export default class Form extends Component {
 
 	state = {
 		[inputNames.author]: '',
-		[inputNames.title]: '',
 		[inputNames.category]: '',
-		[inputNames.description]: ''
+		[inputNames.description]: '',
+		[inputNames.title]: ''
 	}
 
 	getValues = () => this.state
@@ -46,8 +47,23 @@ export default class Form extends Component {
 		this.setState({ [inputName]: value });
 	}
 
+	validate = (ev) => {
+		const { createPost, history } = this.props;
+
+		ev.preventDefault();
+
+		if (this.formRef.current.checkValidity() === false) {
+			this.formRef.current.classList.add('was-validated');
+			ev.stopPropagation();
+		} else {
+			createPost(this.getValues());
+
+			history.push('/main');
+		}
+	}
+
 	render() {
-		const { categories, createPost, history } = this.props;
+		const { categories } = this.props;
 
 		return (
 			<div className="col-6">
@@ -61,18 +77,7 @@ export default class Form extends Component {
 							type="submit"
 							className="btn btn-primary"
 							style={{ width: '50%' }}
-							onClick={(ev) => {
-								ev.preventDefault();
-
-								if (this.formRef.current.checkValidity() === false) {
-									this.formRef.current.classList.add('was-validated');
-									ev.stopPropagation();
-								} else {
-									createPost(this.getValues());
-
-									history.push('/main');
-								}
-							}}
+							onClick={this.validate}
 						>
 							{'Submit'}
 						</button>
@@ -82,5 +87,6 @@ export default class Form extends Component {
 		);
 	}
 }
+
 
 export { inputNames };

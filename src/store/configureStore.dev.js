@@ -14,8 +14,7 @@ const fetchConfig = {
 	lastUpdated: null
 };
 
-
-export default createStore(
+const store = createStore(
 	reducers,
 	{
 		posts: {
@@ -32,3 +31,6 @@ export default createStore(
 		applyMiddleware(thunkMiddleware)
 	)
 );
+
+
+export default store;

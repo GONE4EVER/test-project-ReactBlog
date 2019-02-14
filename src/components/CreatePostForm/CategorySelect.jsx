@@ -12,7 +12,7 @@ const CategorySelect = React.memo(({ content, onChange }) => (
 			placeholder="Choose your option"
 			id={inputNames.category}
 			className="form-control"
-			name="categoryID"
+			name="categoryId"
 			defaultValue=""
 			onChange={(ev) => { onChange(inputNames.category, ev.target.value); }}
 		>

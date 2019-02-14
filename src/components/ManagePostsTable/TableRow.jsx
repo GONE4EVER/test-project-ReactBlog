@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ content, num, clickHandler }) => (
+
+const TableRow = ({ content, num, clickHandler }) => (
 	<tr>
 		<th scope="row">{num}</th>
 		<td>{content.id}</td>
 		<td>{content.heading}</td>
-		<td>{content.authorID}</td>
+		<td>{content.authorId}</td>
 		<td>{content.createdAt}</td>
 		<td>
 			<button
@@ -18,3 +20,17 @@ export default ({ content, num, clickHandler }) => (
 		</td>
 	</tr>
 );
+
+
+TableRow.propTypes = {
+	content: PropTypes.shape({
+		authorId: PropTypes.string.isRequired,
+		createdAt: PropTypes.string.isRequired,
+		heading: PropTypes.string.isRequired,
+		id: PropTypes.string.isRequired
+	}).isRequired,
+	num: PropTypes.number.isRequired,
+	clickHandler: PropTypes.func.isRequired
+};
+
+export default TableRow;

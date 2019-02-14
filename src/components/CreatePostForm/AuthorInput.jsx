@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { inputNames } from './CreatePostForm';
 import './CreatePostForm.css';
 
+
 const AuthorInput = React.memo(({ onChange }) => (
 	<div className="form-group">
 		<label htmlFor={inputNames.author}>Author</label>
@@ -24,6 +25,7 @@ const AuthorInput = React.memo(({ onChange }) => (
 		</div>
 	</div>
 ));
+
 
 AuthorInput.propTypes = {
 	onChange: PropTypes.func.isRequired

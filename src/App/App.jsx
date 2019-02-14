@@ -22,7 +22,7 @@ import styles from './App.css';
 const AppContainer = () => (
 	<div className={styles.AppContainer}>
 		<Switch>
-			<Route exact path={routes.MAIN} component={MainRoute} />
+			<Route strict path={`${routes.MAIN}/:categoryId?`} component={MainRoute} />
 			<Route exact path={routes.CREATE_POST} component={CreatePostRoute} />
 			<Route exact path={routes.MANAGE_POSTS} component={ManagePostsRoute} />
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { inputNames } from './CreatePostForm';
 
+
 const DescriptionArea = React.memo(({ onChange }) => (
 	<div className="form-group">
 		<label htmlFor={inputNames.description}>Description</label>
@@ -21,6 +22,7 @@ const DescriptionArea = React.memo(({ onChange }) => (
 		</div>
 	</div>
 ));
+
 
 DescriptionArea.propTypes = {
 	onChange: PropTypes.func.isRequired

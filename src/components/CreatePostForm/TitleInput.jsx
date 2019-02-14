@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { inputNames } from './CreatePostForm';
 
 
-export default React.memo(({ onChange }) => (
+const TitleInput = React.memo(({ onChange }) => (
 	<div className="form-group">
 		<label htmlFor={inputNames.title}>Title</label>
 		<input
@@ -23,3 +24,10 @@ export default React.memo(({ onChange }) => (
 		</div>
 	</div>
 ));
+
+
+TitleInput.propTypes = {
+	onChange: PropTypes.func.isRequired
+};
+
+export default TitleInput;

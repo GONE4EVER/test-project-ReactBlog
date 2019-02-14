@@ -3,6 +3,7 @@ import { DeletePost } from '../actions';
 
 import ManagePostsTable from '../components/ManagePostsTable';
 
+
 const mapStateToProps = state => ({
 	posts: state.posts.content
 });
@@ -10,6 +11,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	deletePost: id => dispatch(DeletePost(id))
 });
+
 
 export default connect(
 	mapStateToProps,

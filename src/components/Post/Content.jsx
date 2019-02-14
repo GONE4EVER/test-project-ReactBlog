@@ -7,7 +7,7 @@ import styles from './Post.css';
 const Content = ({ img, text }) => (
 	<div className={`row ${styles.content}`}>
 		<div className={`col-2 ${styles.imgContainer}`}>
-			<img src={img}/>
+			<img src={img} alt="" />
 		</div>
 		<p className={`col-10 ${styles.text}`}>
 			{text}

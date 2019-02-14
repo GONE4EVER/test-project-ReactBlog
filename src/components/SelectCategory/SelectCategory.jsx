@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import routes from '../../App/routeNames';
 import styles from './SelectCategory.css';
 
+
 const SelectCategory = ({ categories, switchVisibility, history }) => {
 	const { content, currentCategory } = categories;
 
@@ -14,7 +15,7 @@ const SelectCategory = ({ categories, switchVisibility, history }) => {
 				className={styles.select}
 				onChange={(ev) => {
 					switchVisibility(ev.target.value);
-					history.push(`${ev.target.value && routes.POSTS_BY_CATEGORY}${ev.target.value}`);
+					history.push(`${ev.target.value && routes.MAIN}/${ev.target.value}`); // !!!
 				}}
 				defaultValue={currentCategory}
 			>
@@ -32,6 +33,7 @@ const SelectCategory = ({ categories, switchVisibility, history }) => {
 	);
 };
 
+
 SelectCategory.propTypes = {
 	categories: PropTypes.shape({
 		content: PropTypes.arrayOf(
@@ -48,4 +50,4 @@ SelectCategory.propTypes = {
 	}).isRequired
 };
 
-export default withRouter(SelectCategory);
+export default withRouter(SelectCategory); // !!!

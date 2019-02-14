@@ -2,13 +2,15 @@ import { connect } from 'react-redux';
 import SelectCategory from '../components/SelectCategory';
 import { ShowPostsByCategory } from '../actions';
 
+
 const mapStateToProps = state => ({
 	categories: state.categories
 });
 
 const mapDispatchToProps = dispatch => ({
-	switchVisibility: categoryID => dispatch(ShowPostsByCategory(categoryID))
+	switchVisibility: categoryId => dispatch(ShowPostsByCategory(categoryId))
 });
+
 
 export default connect(
 	mapStateToProps,

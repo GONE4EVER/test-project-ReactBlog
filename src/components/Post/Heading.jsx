@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import routes from '../../App/routeNames';
 import styles from './Post.css';
 
+
 const Heading = ({
-	id, authorID, heading, createdAt
+	id, authorId, heading, createdAt
 }) => {
 	const date = new Date(createdAt);
 
@@ -17,7 +18,7 @@ const Heading = ({
 	return (
 		<React.Fragment>
 			<div className={styles.headerFlex}>
-				<Link to={`${routes.POSTS}${id}`}>
+				<Link to={`${routes.POSTS}/${id}`}>
 					<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
 				</Link>
 				<div className={styles.headSpacer} />
@@ -25,15 +26,16 @@ const Heading = ({
 			<p className="blog-post-meta">
 				<b>{`${day} ${month} ${year}`}</b>
 				{' by '}
-				<Link to="/">{authorID}</Link>
+				<Link to="/">{authorId}</Link>
 			</p>
 		</React.Fragment>
 	);
 };
 
+
 Heading.propTypes = {
 	id: PropTypes.string.isRequired,
-	authorID: PropTypes.string.isRequired,
+	authorId: PropTypes.string.isRequired,
 	heading: PropTypes.string.isRequired,
 	createdAt: PropTypes.number.isRequired
 };

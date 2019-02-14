@@ -8,6 +8,7 @@ import VisiblePostsList from '../../containers/VisiblePostsList';
 import images from '../../resources/images.json';
 import styles from './MainRoute.css';
 
+
 const MainRouteContainer = () => (
 	<div className={`row ${styles.container}`}>
 		<VisiblePostsList />
