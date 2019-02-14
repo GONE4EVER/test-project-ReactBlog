@@ -25,7 +25,7 @@ const TableRow = ({ content, num, clickHandler }) => (
 TableRow.propTypes = {
 	content: PropTypes.shape({
 		authorId: PropTypes.string.isRequired,
-		createdAt: PropTypes.string.isRequired,
+		createdAt: PropTypes.number.isRequired,
 		heading: PropTypes.string.isRequired,
 		id: PropTypes.string.isRequired
 	}).isRequired,

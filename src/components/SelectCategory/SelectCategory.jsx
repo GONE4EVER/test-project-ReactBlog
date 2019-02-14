@@ -15,7 +15,7 @@ const SelectCategory = ({ categories, switchVisibility, history }) => {
 				className={styles.select}
 				onChange={(ev) => {
 					switchVisibility(ev.target.value);
-					history.push(`${ev.target.value && routes.MAIN}/${ev.target.value}`); // !!!
+					history.push(`${routes.MAIN}/${ev.target.value || ''}`); // !!!
 				}}
 				defaultValue={currentCategory}
 			>

@@ -24,14 +24,3 @@ element:hover {
   height: 100%;
 }
 
-.border {
-  width: 100%;
-  height: 5px;
-  background: inherit;
-}
-
-.activeBorder {
-  background: rgb(255, 255, 255);
-}
-
-
