@@ -1,22 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 /* import './CreatePostForm.css'; */
 
 
 const Input = (config) => {
-	const { name, title } = config;
+	const { title, label } = config;
 
 	return React.memo(({ onChange }) => (
 		<div className="form-group">
-			<label htmlFor={title}>Title</label>
+			<label htmlFor={title}>{label}</label>
 			<input
 				required
 				placeholder="Type here..."
 				type="text"
 				id={title}
 				className="autocomplete form-control"
-				name={name}
+				name={title}
 				onChange={(ev) => { onChange(title, ev.target.value); }}
 			/>
 			<div className="valid-feedback">
@@ -29,9 +27,5 @@ const Input = (config) => {
 	));
 };
 
-
-Input.propTypes = {
-	onChange: PropTypes.func.isRequired
-};
 
 export default Input;

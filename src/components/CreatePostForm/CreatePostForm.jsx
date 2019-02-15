@@ -56,7 +56,6 @@ export default class Form extends Component {
 			this.formRef.current.classList.add('was-validated');
 			ev.stopPropagation();
 		} else {
-			console.log(this.getValues());
 			createPost(this.getValues());
 			history.push('/main');
 		}
