@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
+import CreateCategoryRoute from '../components/CreateCategoryRoute';
 import CreatePostRoute from '../components/CreatePostRoute';
 import ErrorRoute from '../components/ErrorRoute';
 import MainRoute from '../components/MainRoute';
@@ -23,6 +24,7 @@ const AppContainer = () => (
 	<div className={styles.AppContainer}>
 		<Switch>
 			<Route strict path={`${routes.MAIN}/:categoryId?`} component={MainRoute} />
+			<Route exact path={routes.CREATE_CATEGORY} component={CreateCategoryRoute} />
 			<Route exact path={routes.CREATE_POST} component={CreatePostRoute} />
 			<Route exact path={routes.MANAGE_POSTS} component={ManagePostsRoute} />
 
