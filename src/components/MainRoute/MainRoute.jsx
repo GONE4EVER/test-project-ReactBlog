@@ -25,5 +25,16 @@ const MainRoute = props => (
 );
 
 
+MainRouteContainer.propTypes = {
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			categoryId: PropTypes.string
+		}).isRequired
+	}).isRequired,
+	history: PropTypes.shape({
+		push: PropTypes.func.isRequired
+	}).isRequired
+};
+
 export default withRouter(MainRoute);
 export { MainRouteContainer };
