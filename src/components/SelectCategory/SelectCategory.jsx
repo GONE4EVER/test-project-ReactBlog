@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
 import routes from '../../App/routeNames';
 import styles from './SelectCategory.css';
 
 
-const SelectCategory = ({ categories, switchVisibility, history }) => {
-	const { content, currentCategory } = categories;
+const SelectCategory = ({
+	categories, match, history
+}) => {
+	const { content } = categories;
+	const { categoryId } = match.params;
 
 	return (
 		<aside className={`col-md-2 blog-sidebar ${styles.container}`}>
 			<select
 				className={styles.select}
-				onChange={(ev) => {
-					switchVisibility(ev.target.value);
-					history.push(`${routes.MAIN}/${ev.target.value || ''}`); // !!!
+				onChange={({ target }) => {
+					history.push(`${routes.MAIN}/${target.value || ''}`);
 				}}
-				defaultValue={currentCategory}
+				defaultValue={categoryId}
 			>
 				<option value="">All Posts</option>
 				{content.map(category => (
@@ -42,12 +43,13 @@ SelectCategory.propTypes = {
 				name: PropTypes.string.isRequired
 			})
 		).isRequired,
-		currentCategory: PropTypes.string
 	}).isRequired,
-	switchVisibility: PropTypes.func.isRequired,
+	match: PropTypes.shape({
+		categoryId: PropTypes.string
+	}).isRequired,
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired
 	}).isRequired
 };
 
-export default withRouter(SelectCategory); // !!!
+export default SelectCategory;

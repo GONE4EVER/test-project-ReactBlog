@@ -10,6 +10,7 @@
   
   height: 100%;
   width: 50%;
+  border-bottom: 3px solid #ee6e73;
 }
 
 element:hover {

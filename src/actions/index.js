@@ -11,13 +11,6 @@ export const GetPostById = id => ({
 	}
 });
 
-export const ShowPostsByCategory = filter => ({
-	type: actionTypes.SHOW_POSTS_BY_CATEGORY,
-	payload: {
-		filter
-	}
-});
-
 export const CreatePost = (content) => {
 	const currDate = Date.now();
 

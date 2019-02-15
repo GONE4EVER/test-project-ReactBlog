@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import FullSizeImage from './FullSizeImage';
@@ -9,17 +10,17 @@ import images from '../../resources/images.json';
 import styles from './MainRoute.css';
 
 
-const MainRouteContainer = () => (
+const MainRouteContainer = ({ match, history }) => (
 	<div className={`row ${styles.container}`}>
-		<VisiblePostsList />
-		<CategoriesSelect />
+		<VisiblePostsList {...match} />
+		<CategoriesSelect match={match} history={history} />
 	</div>
 );
 
-const MainRoute = () => (
+const MainRoute = props => (
 	<main>
 		<FullSizeImage imgSrc={images.imgSrc} />
-		<MainRouteContainer />
+		<MainRouteContainer {...props} />
 	</main>
 );
 

@@ -23,7 +23,6 @@ const store = createStore(
 		},
 		categories: {
 			content: categories,
-			currentCategory: null,
 			...fetchConfig
 		}
 	},
