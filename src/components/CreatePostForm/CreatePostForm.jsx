@@ -10,9 +10,9 @@ import DescriptionArea from './DescriptionArea';
 
 const inputNames = {
 	author: 'authorId',
-	title: 'heading',
+	title: 'title',
 	category: 'categoryId',
-	description: 'text'
+	text: 'text'
 };
 
 export default class Form extends Component {
@@ -37,7 +37,7 @@ export default class Form extends Component {
 	state = {
 		[inputNames.author]: '',
 		[inputNames.category]: '',
-		[inputNames.description]: '',
+		[inputNames.text]: '',
 		[inputNames.title]: ''
 	}
 
@@ -56,8 +56,8 @@ export default class Form extends Component {
 			this.formRef.current.classList.add('was-validated');
 			ev.stopPropagation();
 		} else {
+			console.log(this.getValues());
 			createPost(this.getValues());
-
 			history.push('/main');
 		}
 	}

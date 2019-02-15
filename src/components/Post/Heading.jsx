@@ -7,7 +7,7 @@ import styles from './Post.css';
 
 
 const Heading = ({
-	id, authorId, heading, createdAt
+	id, authorId, title, createdAt
 }) => {
 	const date = new Date(createdAt);
 
@@ -19,7 +19,7 @@ const Heading = ({
 		<React.Fragment>
 			<div className={styles.headerFlex}>
 				<Link to={`${routes.POSTS}/${id}`}>
-					<h2 className={`blog-post-title ${styles.cursorPointer}`}>{heading}</h2>
+					<h2 className={`blog-post-title ${styles.cursorPointer}`}>{title}</h2>
 				</Link>
 				<div className={styles.headSpacer} />
 			</div>
@@ -36,7 +36,7 @@ const Heading = ({
 Heading.propTypes = {
 	id: PropTypes.string.isRequired,
 	authorId: PropTypes.string.isRequired,
-	heading: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
 	createdAt: PropTypes.number.isRequired
 };
 

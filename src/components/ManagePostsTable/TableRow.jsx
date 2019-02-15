@@ -6,7 +6,7 @@ const TableRow = ({ content, num, clickHandler }) => (
 	<tr>
 		<th scope="row">{num}</th>
 		<td>{content.id}</td>
-		<td>{content.heading}</td>
+		<td>{content.title}</td>
 		<td>{content.authorId}</td>
 		<td>{content.createdAt}</td>
 		<td>
@@ -26,7 +26,7 @@ TableRow.propTypes = {
 	content: PropTypes.shape({
 		authorId: PropTypes.string.isRequired,
 		createdAt: PropTypes.number.isRequired,
-		heading: PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
 		id: PropTypes.string.isRequired
 	}).isRequired,
 	num: PropTypes.number.isRequired,

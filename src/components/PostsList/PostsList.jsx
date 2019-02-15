@@ -30,7 +30,7 @@ PostsList.propTypes = {
 			id: PropTypes.string.isRequired,
 			createdAt: PropTypes.number.isRequired,
 			authorId: PropTypes.string.isRequired,
-			heading: PropTypes.string.isRequired,
+			title: PropTypes.string.isRequired,
 			img: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
 			comments: PropTypes.array.isRequired

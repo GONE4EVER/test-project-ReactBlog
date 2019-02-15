@@ -6,13 +6,13 @@ import { inputNames } from './CreatePostForm';
 
 const DescriptionArea = React.memo(({ onChange }) => (
 	<div className="form-group">
-		<label htmlFor={inputNames.description}>Description</label>
+		<label htmlFor={inputNames.text}>Description</label>
 		<textarea
 			required
-			id={inputNames.description}
+			id={inputNames.text}
 			className="form-control"
 			rows="8"
-			onChange={(ev) => { onChange(inputNames.description, ev.target.value); }}
+			onChange={(ev) => { onChange(inputNames.text, ev.target.value); }}
 		/>
 		<div className="valid-feedback">
 			{'Looks good!'}
