@@ -1,36 +1,34 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import styles from './NavBarElement.css';
 
 
-class NavBarElement extends PureComponent {
-	static propTypes = {
-		name: PropTypes.string.isRequired,
-		onClick: PropTypes.func.isRequired,
-		pathName: PropTypes.string.isRequired
-	}
+const NavBarElement = React.memo((props) => {
+	const {
+		pathName, name
+	} = props;
 
-	render() {
-		const {
-			pathName, name, onClick
-		} = this.props;
+	return (
+		<NavLink
+			className={styles.element}
+			to={`/${pathName}`}
 
-		return (
-			<NavLink
-				className={styles.element}
-				to={`/${pathName}`}
-				onClick={() => onClick(pathName)}
-				activeStyle={{ borderBottom: '3px solid white' }}
-			>
-				<div className={styles.text}>
-					{name}
-				</div>
-			</NavLink>
-		);
-	}
-}
+			activeStyle={{ borderBottom: '3px solid white' }}
+		>
+			<div className={styles.text}>
+				{name}
+			</div>
+		</NavLink>
+	);
+});
+
+
+NavBarElement.propTypes = {
+	name: PropTypes.string.isRequired,
+	pathName: PropTypes.string.isRequired
+};
 
 
 export default NavBarElement;
