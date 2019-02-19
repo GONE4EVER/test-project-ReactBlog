@@ -12,7 +12,7 @@ const noPostsFound = (
 	</h1>
 );
 
-const PostsList = React.memo(({ posts }) => (
+const PostsList = ({ posts }) => (
 	<ul className="col-md-10 blog-main">
 		{!posts.length
 			? noPostsFound
@@ -21,7 +21,7 @@ const PostsList = React.memo(({ posts }) => (
 			))
 		}
 	</ul>
-));
+);
 
 
 PostsList.propTypes = {

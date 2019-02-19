@@ -7,18 +7,22 @@ import Likes from './Likes';
 
 import styles from './Post.css';
 
+const PostContext = React.createContext({});
 
 const Post = React.memo(props => (
-	<article className={`blog-post ${styles.post}`}>
-		<Heading {...props}		/>
-		<Content {...props} />
-		<footer className={styles.footer}>
-			<Comments {...props} />
-			<Likes {...props} />
-		</footer>
-		<hr />
-	</article>
+	<PostContext.Provider value={props}>
+		<article className={`blog-post ${styles.post}`}>
+			<Heading />
+			<Content />
+			<footer className={styles.footer}>
+				<Comments />
+				<Likes />
+			</footer>
+			<hr />
+		</article>
+	</PostContext.Provider>
 ));
 
 
 export default Post;
+export { PostContext };
