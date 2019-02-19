@@ -1,31 +1,26 @@
 import React from 'react';
-/* import './CreatePostForm.css'; */
 
 
-const Input = (config) => {
-	const { title, label } = config;
+export default (config) => {
+	const { label, title } = config;
 
 	return React.memo(({ onChange }) => (
 		<div className="form-group">
 			<label htmlFor={title}>{label}</label>
-			<input
+			<textarea
 				required
-				placeholder="Type here..."
-				type="text"
 				id={title}
-				className="autocomplete form-control"
+				className="form-control"
+				rows="8"
 				name={title}
 				onChange={(ev) => { onChange(title, ev.target.value); }}
 			/>
 			<div className="valid-feedback">
-				{'Perfect!'}
+				{'Looks good!'}
 			</div>
 			<div className="invalid-feedback">
-				{'Please, fill this field'}
+				{'Please, provide the description'}
 			</div>
 		</div>
 	));
 };
-
-
-export default Input;

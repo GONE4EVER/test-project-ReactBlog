@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import AuthorInput from './AuthorInput';
+import InputName, {
+	AuthorInput,
+	TitleInput,
+	DescriptionArea,
+	CategorySelect
+} from './Inputs';
+
 import styles from './CreatePostForm.css';
-import TitleInput from './TitleInput';
-import CategorySelect from './CategorySelect';
-import DescriptionArea from './DescriptionArea';
 
-
-const inputNames = {
-	author: 'authorId',
-	title: 'title',
-	category: 'categoryId',
-	text: 'text'
-};
 
 export default class Form extends Component {
 	static propTypes = {
@@ -35,10 +31,10 @@ export default class Form extends Component {
 	}
 
 	state = {
-		[inputNames.author]: '',
-		[inputNames.category]: '',
-		[inputNames.text]: '',
-		[inputNames.title]: ''
+		[InputName.author]: '',
+		[InputName.category]: '',
+		[InputName.text]: '',
+		[InputName.title]: ''
 	}
 
 	getValues = () => this.state
@@ -86,6 +82,3 @@ export default class Form extends Component {
 		);
 	}
 }
-
-
-export { inputNames };
