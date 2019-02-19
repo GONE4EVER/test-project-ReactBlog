@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-import InputTemplate from '../HOCs/InputTemplate';
-import TextareaTemplate from '../HOCs/TextareaTemplate';
-import SelectTemplate from '../HOCs/SelectTemplate';
+import InputTemplate from '../Form/InputTemplate';
+import TextareaTemplate from '../Form/TextareaTemplate';
+import SelectTemplate from '../Form/SelectTemplate';
 
 
 const InputName = {

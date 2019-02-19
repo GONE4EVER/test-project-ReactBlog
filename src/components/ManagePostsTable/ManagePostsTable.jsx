@@ -19,7 +19,7 @@ const ManagePostsTable = ({ posts, deletePost }) => (
 			</thead>
 			<tbody>
 				{posts.map((post, num) => (
-					<TableRow content={post} key={post.id} num={num} clickHandler={deletePost} />
+					<TableRow content={post} key={post.id} num={num + 1} clickHandler={deletePost} />
 				))}
 			</tbody>
 		</table>

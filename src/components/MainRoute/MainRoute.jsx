@@ -10,22 +10,18 @@ import images from '../../resources/images.json';
 import styles from './MainRoute.css';
 
 
-const MainRouteContainer = ({ match, history }) => (
-	<div className={`row ${styles.container}`}>
-		<VisiblePostsList {...match} />
-		<CategoriesSelect match={match} history={history} />
-	</div>
-);
-
-const MainRoute = props => (
+const MainRoute = ({ match, history }) => (
 	<main>
 		<FullSizeImage imgSrc={images.imgSrc} />
-		<MainRouteContainer {...props} />
+		<div className={`row ${styles.container}`}>
+			<VisiblePostsList {...match} />
+			<CategoriesSelect match={match} history={history} />
+		</div>
 	</main>
 );
 
 
-MainRouteContainer.propTypes = {
+MainRoute.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
 			categoryId: PropTypes.string
@@ -37,4 +33,3 @@ MainRouteContainer.propTypes = {
 };
 
 export default withRouter(MainRoute);
-export { MainRouteContainer };
