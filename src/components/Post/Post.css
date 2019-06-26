@@ -1,0 +1,89 @@
+.post {
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: flex-start
+}
+
+.text {
+  max-height: 144px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;  
+}
+
+.assessment {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2em;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.totalLikes {
+  text-align: center;
+  width: 2em
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.comments:hover {
+  color: #ee6e73;
+}
+
+.headerFontSize {
+  font-size: 1.5rem;
+}
+
+.imgContainer {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  vertical-align: 50%;
+  overflow: hidden;
+  padding-top: 0.25em;
+}
+
+.spanText {
+  padding-left: 0.3em;
+  font-size: 1.2rem;
+}
+
+.noTop {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.noBottom {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.headerFlex {
+  display: flex;
+}
+
+.headSpacer {
+  flex-grow: 8
+}

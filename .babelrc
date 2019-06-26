@@ -7,11 +7,6 @@
       "@babel/plugin-transform-react-jsx",
       "@babel/plugin-syntax-dynamic-import",
       "@babel/plugin-proposal-class-properties",
-      [
-        "react-css-modules",
-        {
-          "webpackHotModuleReloading": true
-        }
-      ]
+      
     ]
 }

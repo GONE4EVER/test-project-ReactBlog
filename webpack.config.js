@@ -1,20 +1,31 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const srcUrl = 'localhost:8082';
 
 module.exports = {
 	mode: 'development',
-	entry: './src/index.js',
+	entry: './index.js',
 	output: {
 		path: path.resolve((__dirname, 'Dist/')),
-		filename: 'index.js'
+		filename: 'static/js/index.js'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
-		contentBase: './Dist/'
+		port: 8000,
+		contentBase: './Dist/',
+		proxy: {
+			'*': {
+				target: srcUrl,
+				bypass() {
+					return 'index.html';
+				}
+			}
+		}
 	},
-	resolve: { extensions: ['.js', '.jsx'] },
+	resolve: { extensions: ['.js', '.jsx', '.css'] },
 	module: {
 		rules: [
 			{
@@ -69,8 +80,22 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin({
-			filename: 'style.css'
+			filename: 'static/css/style.css'
 		}),
-		new HtmlWebpackPlugin({ template: './src/index.html' })
-	],
+		new HtmlWebpackPlugin({ template: './index.html' }),
+		new CopyWebpackPlugin([
+			{
+				from: './node_modules/font-awesome/css/font-awesome.min.css',
+				to: 'static/css/'
+			},
+			{
+				from: './node_modules/font-awesome/fonts/',
+				to: 'static/fonts/'
+			},
+			{
+				from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+				to: 'static/css'
+			}
+		])
+	]
 };

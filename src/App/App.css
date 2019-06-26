@@ -1,3 +1,24 @@
-.App {
-  background-color: aqua
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --headerHeight: 60px;
+}
+
+a:hover {
+  text-decoration: none
+}
+
+.AppContainer {
+  margin-top: var(--headerHeight);
+  height: 90%;
+}
+
+main {
+  height: 90%;
 }
