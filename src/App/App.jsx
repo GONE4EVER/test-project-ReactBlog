@@ -17,6 +17,7 @@ import PostRoute from '../components/PostRoute';
 import NavBar from '../components/NavBar/NavBar';
 
 import routes from './routeNames';
+
 import styles from './App.css';
 
 
@@ -47,6 +48,10 @@ const App = () => (
 	</Provider>
 );
 
+const root = document.createElement('div');
+root.id = styles.root;
+document.body.appendChild(root);
+
 ReactDOM.render(
-	<App />, document.getElementById('root')
+	<App />, root
 );

@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -82,6 +84,7 @@ module.exports = {
 		new ExtractTextPlugin({
 			filename: 'static/css/style.css'
 		}),
+		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({ template: './index.html' }),
 		new CopyWebpackPlugin([
 			{

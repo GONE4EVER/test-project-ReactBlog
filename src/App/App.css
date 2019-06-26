@@ -1,13 +1,19 @@
+:root {
+  --headerHeight: 60px;
+}
+
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
+  height: 100%;
 }
 
-:root {
-  --headerHeight: 60px;
+#root {
+  height: 100%
 }
 
 a:hover {
@@ -17,6 +23,8 @@ a:hover {
 .AppContainer {
   margin-top: var(--headerHeight);
   height: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 main {
