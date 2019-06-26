@@ -11,7 +11,6 @@ const mapDispatchToProps = dispatch => ({
 	createPost: content => dispatch(CreatePost(content))
 });
 
-
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
