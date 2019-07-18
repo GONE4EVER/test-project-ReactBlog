@@ -1,0 +1,9 @@
+{
+  "name": "React Blog",
+  "short_name": "Blog",
+  "icons": [
+    {
+      "src": "/favicon.ico"
+    }
+  ]
+}

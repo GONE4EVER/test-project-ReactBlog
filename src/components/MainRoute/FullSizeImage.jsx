@@ -1,22 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import image from '../../assets/Sakura.jpg';
 
 import styles from './MainRoute.css';
 
-
-const FullSizeImage = ({ imgSrc }) => (
+const FullSizeImage = () => (
 	<div className={styles.img}>
 		<img
-			src={imgSrc}
+			src={image}
 			alt=""
 		/>
-		<span className="card-title"><strong>Мао Цзэдун</strong></span>
 	</div>
 );
-
-FullSizeImage.propTypes = {
-	imgSrc: PropTypes.string.isRequired
-};
 
 
 export default FullSizeImage;

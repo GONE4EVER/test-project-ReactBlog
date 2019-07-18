@@ -6,13 +6,11 @@ import FullSizeImage from './FullSizeImage';
 import CategoriesSelect from '../../containers/CategoriesSelect';
 import VisiblePostsList from '../../containers/VisiblePostsList';
 
-import images from '../../resources/images.json';
 import styles from './MainRoute.css';
-
 
 const MainRoute = ({ match, history }) => (
 	<main>
-		<FullSizeImage imgSrc={images.imgSrc} />
+		<FullSizeImage />
 		<div className={`row ${styles.container}`}>
 			<VisiblePostsList {...match} />
 			<CategoriesSelect match={match} history={history} />
