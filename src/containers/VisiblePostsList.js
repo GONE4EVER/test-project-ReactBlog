@@ -3,12 +3,10 @@ import PostsList from '../components/PostsList';
 
 
 const getVisiblePosts = (posts, categories, match) => {
-	const currCategory = categories.find(category => category.id === match.params.categoryId);
+	const { categoryId } = match.params;
+	const currCategory = categories.find(category => category.id === categoryId);
 
-	if (currCategory) {
-		return posts.filter(post => post.categoryId === currCategory.id);
-	}
-	return posts;
+	return currCategory ? posts.filter(post => post.categoryId === currCategory.id) : posts;
 };
 
 const mapStateToProps = (state, ownProps) => ({
