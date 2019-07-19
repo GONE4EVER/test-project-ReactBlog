@@ -2,24 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const TableRow = ({ content, num, clickHandler }) => (
-	<tr>
-		<th scope="row">{num}</th>
-		<td>{content.id}</td>
-		<td>{content.title}</td>
-		<td>{content.authorId}</td>
-		<td>{content.createdAt}</td>
-		<td>
-			<button
-				type="button"
-				className="btn btn-primary"
-				onClick={() => clickHandler(content.id)}
-			>
-				{'Delete'}
-			</button>
-		</td>
-	</tr>
-);
+const TableRow = ({ content, num, clickHandler }) => {
+	const click = () => clickHandler(content.id)
+
+	return (
+		<tr>
+			<th scope="row">{num}</th>
+			<td>{content.id}</td>
+			<td>{content.title}</td>
+			<td>{content.authorId}</td>
+			<td>{content.createdAt}</td>
+			<td>
+				<button
+					type="button"
+					className="btn btn-primary"
+					onClick={click}
+				>
+					{'Delete'}
+				</button>
+			</td>
+		</tr>
+	)
+};
 
 
 TableRow.propTypes = {
