@@ -1,25 +1,59 @@
 const webpack = require('webpack');
-
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// production mode only
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+require('dotenv').config();
+
+
 const srcUrl = 'localhost:8082';
+const devMode = process.env.NODE_ENV === 'development';
+
+const usedPlugins = [
+	new webpack.HotModuleReplacementPlugin(),
+	new HtmlWebpackPlugin({ template: './index.html' }),
+	new CopyWebpackPlugin([
+		{
+			from: './node_modules/font-awesome/css/font-awesome.min.css',
+			to: 'static/css/'
+		},
+		{
+			from: './node_modules/font-awesome/fonts/',
+			to: 'static/fonts/'
+		},
+		{
+			from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+			to: 'static/css'
+		},
+		{
+			from: './public/',
+			to: 'static/'
+		}
+	])
+];
 
 module.exports = {
 	mode: 'development',
 	entry: './index.js',
 	output: {
-		path: path.resolve((__dirname, 'Dist/')),
-		filename: 'static/js/index.js'
+		path: path.resolve(__dirname, 'Dist/'),
+		filename: 'js/index.js'
 	},
+	optimization: {
+		minimize: !devMode
+  },
+	stats: 'minimal',
 	devtool: 'inline-source-map',
 	devServer: {
+		hot: true,
+
 		port: 8000,
 		contentBase: './Dist/',
 		proxy: {
-			'*': {
+			'/pages/*': {
 				target: srcUrl,
 				bypass() {
 					return 'index.html';
@@ -34,45 +68,30 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: [
-							'@babel/react',
-							'@babel/env',
-							{
-								plugins: [
-									'@babel/plugin-proposal-class-properties',
-									'@babel/plugin-syntax-dynamic-import',
-									'@babel/plugin-transform-react-jsx',
-									'react-css-modules'
-								]
-							}
-						],
-					}
+					loader: 'babel-loader'
 				}
 			},
 			{
-				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=20000'
-			},
-			{
 				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'css-loader',
-							query: {
-								modules: true,
+				use: [
+					(devMode 
+						? 'style-loader' 
+						: MiniCssExtractPlugin.loader
+					),
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								mode: 'local',
 								localIdentName: '[name]_[local]__[hash:base64:5]',
-								importLoaders: 1,
-							}
+							},
+							url: true,
 						}
-					],
-				})
+					}
+				],
 			},
 			{
-				test: /\.svg$/,
+				test: /\.(svg|png|jpg)$/,
 				loader: 'url-loader',
 				options: {
 					limit: 10000,
@@ -80,25 +99,13 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new ExtractTextPlugin({
-			filename: 'static/css/style.css'
-		}),
-		new webpack.HotModuleReplacementPlugin(),
-		new HtmlWebpackPlugin({ template: './index.html' }),
-		new CopyWebpackPlugin([
-			{
-				from: './node_modules/font-awesome/css/font-awesome.min.css',
-				to: 'static/css/'
-			},
-			{
-				from: './node_modules/font-awesome/fonts/',
-				to: 'static/fonts/'
-			},
-			{
-				from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
-				to: 'static/css'
-			}
-		])
-	]
+	plugins: devMode 
+		? usedPlugins 
+		: [
+			new MiniCssExtractPlugin({
+				filename: '[name]_[hash].css',
+				chunkFilename: '[id]_[hash].css',
+			}),
+			...usedPlugins,
+		]
 };
