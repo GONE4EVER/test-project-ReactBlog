@@ -21,7 +21,8 @@ a:hover {
 }
 
 .AppContainer {
-  margin-top: var(--headerHeight);
+  position: relative;
+  top: var(--headerHeight);
   height: calc(100% - var(--headerHeight));
   overflow: scroll;
   overflow-x: hidden;

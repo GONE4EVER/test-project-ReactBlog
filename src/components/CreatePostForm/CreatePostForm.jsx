@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import routes from '../../App/routeNames';
+
 import InputName, {
 	AuthorInput,
 	TitleInput,
@@ -53,7 +55,7 @@ export default class Form extends Component {
 			ev.stopPropagation();
 		} else {
 			createPost(this.getValues());
-			history.push('/main');
+			history.push(`${routes.MAIN}`);
 		}
 	}
 

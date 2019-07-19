@@ -20,7 +20,6 @@ import routes from './routeNames';
 
 import styles from './App.css';
 
-
 const AppContainer = () => (
 	<div className={styles.AppContainer}>
 		<Switch>
@@ -29,9 +28,11 @@ const AppContainer = () => (
 			<Route exact path={routes.CREATE_POST} component={CreatePostRoute} />
 			<Route exact path={routes.MANAGE_POSTS} component={ManagePostsRoute} />
 
-			<Route strict path={routes.POSTS} component={PostRoute} />
+			<Route strict path={`${routes.POSTS}`} component={PostRoute} />
 
 			<Redirect exact from="/" to={routes.MAIN} />
+			<Redirect exact from="/pages/" to={routes.MAIN} />
+			
 			<Route component={ErrorRoute} />
 		</Switch>
 	</div>
