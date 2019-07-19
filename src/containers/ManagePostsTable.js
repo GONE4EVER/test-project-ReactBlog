@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { DeletePost } from '../actions';
+import { DeletePost } from '../actions/actionsList';
 
 import ManagePostsTable from '../components/ManagePostsTable';
 
