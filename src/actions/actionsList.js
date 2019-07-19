@@ -12,7 +12,7 @@ export const GetPostById = id => ({
 });
 
 export const CreatePost = (content) => {
-	const currDate = Date.now();
+	const currDate = Date.now(); // !!!
 
 	return ({
 		type: actionTypes.CREATE_POST,
@@ -23,13 +23,22 @@ export const CreatePost = (content) => {
 			comments: [],
 			likes: [],
 			dislikes: [],
-			img: 'https://i.ytimg.com/vi/bEVeO4q8HkM/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCI6rX1v4LXr9DJ_nbIVRLgy_JxZg' // !!!
+			img: 'https://media.giphy.com/media/uprwwjptZW4Za/giphy.gif' // !!!
 		}
 	});
 };
 
 export const DeletePost = id => ({
 	type: actionTypes.DELETE_POST,
+	payload: {
+		id
+	}
+});
+
+export const RatePost = (id, liked) => ({
+	type: liked 
+		? actionTypes.LIKE_POST
+		: actionTypes.DISLIKE_POST,
 	payload: {
 		id
 	}
