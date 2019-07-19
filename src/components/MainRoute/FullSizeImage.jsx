@@ -1,13 +1,14 @@
 import React from 'react';
 
-import image from '../../assets/Sakura.jpg';
-
 import styles from './MainRoute.css';
 
-const FullSizeImage = () => (
-	<div className={styles.img}>
+const FullSizeImage = ({ src }) => (
+	<div className={styles.imgContainer}>
 		<img
-			src={image}
+			className={styles.img}
+			style={{
+				backgroundImage:`url(${src})`
+			}}
 			alt=""
 		/>
 	</div>
@@ -15,3 +16,4 @@ const FullSizeImage = () => (
 
 
 export default FullSizeImage;
+ 
