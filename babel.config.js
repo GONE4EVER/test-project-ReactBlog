@@ -1,9 +1,8 @@
 require('dotenv').config()
 
 module.exports = function (api) {
-  const isDev = process.env.NODE_ENV === 'development'; 
-  console.log(isDev)
-  api.cache(isDev);
+  const devMode = process.env.NODE_ENV === 'development'; 
+  api.cache(devMode);
   
   const presets = [
     "@babel/react",
@@ -21,7 +20,12 @@ module.exports = function (api) {
   ];
 
   return {
-    presets,
+    presets: devMode 
+    ? presets
+    : [
+      ...presets,
+      'minify'
+    ],
     plugins
   };
 }
