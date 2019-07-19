@@ -3,7 +3,7 @@
   "short_name": "Blog",
   "icons": [
     {
-      "src": "/favicon.ico"
+      "src": "/static/favicon.ico"
     }
   ]
 }
