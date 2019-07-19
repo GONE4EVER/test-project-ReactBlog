@@ -1,0 +1,19 @@
+loading {
+  async data loading
+
+  placeholder while loading *done*
+
+  images fallbacks
+  posts fallbacks
+  category fallback
+
+  redux thunk || redux saga
+  redux reselect
+
+  react.lazy
+}
+
+rendering {
+  virtuallize (only viewport rendering)
+  fibers?
+}

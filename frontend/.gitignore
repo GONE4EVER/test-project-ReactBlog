@@ -22,9 +22,6 @@
 .env.production.local
 .env
 
-ex.txt
-todo.txt
-
 /.vscode
 
 npm-debug.log*

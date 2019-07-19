@@ -1,0 +1,48 @@
+--General-- {
+  ref
+  render props
+  React.PureComponent
+  portal
+  error boundries
+}
+
+--lifesycle-- {
+  componentDidMount {
+    Do:
+      -Выполняйте сайд-эффекты (Вызовы AJAX и т.д.)
+    Avoid:
+      -Не вызывайте this.setState т.к. это вызовет перерисовку.
+  }
+    
+  componentDidUpdate {
+    Do:
+      -Выполняйте сайд-эффекты (Вызовы AJAX и т.д.)
+    Avoid:
+      -Не вызывайте this.setState т.к. это будет вызывать циклическую перерисовку.
+  }
+
+  componentWillUnmount {
+    Do:
+      -Удаляйте таймеры и слушателей (listeners) созданных во время жизни компонента.
+    Avoid:
+      -Не вызывайте this.setState, не стартуйте новых слушателей или таймеры.
+  }
+
+  shouldComponentUpdate {
+    Do: 
+      -Используйте для оптимизации производительности компонента
+    Avoid: 
+      -Не выполняйте никаких сайд-эффектов (Вызовы AJAX и т.д.)
+      -Не вызывайте this.setState
+  }
+
+  componentDidCatch - You can also log the error to an error reporting service
+  static getDeriviedStateFromError - Update state so the next render will show the fallback UI.
+}
+
+--context-- {
+  ContextName.Provider
+  ContextName.Consumer
+}
+
+babel-plugin-transform-react-remove-prop-types
