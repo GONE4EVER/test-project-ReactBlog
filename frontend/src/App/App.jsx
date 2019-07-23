@@ -32,7 +32,7 @@ const AppContainer = () => (
 
 			<Redirect exact from="/" to={routes.MAIN} />
 			<Redirect exact from="/pages/" to={routes.MAIN} />
-			
+
 			<Route component={ErrorRoute} />
 		</Switch>
 	</div>
