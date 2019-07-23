@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { PostContext } from './Post';
+import PostContext from './Context';
 
 import styles from './Post.css';
 
 
 const Likes = React.memo(({ ratePost }) => (
 	<PostContext.Consumer>
-		{({ likes, id,  dislikes }) => {
+		{({ likes, id, dislikes }) => {
 			const total = likes.length - dislikes.length;
 
 			return (
@@ -30,6 +31,10 @@ const Likes = React.memo(({ ratePost }) => (
 		}}
 	</PostContext.Consumer>
 ));
+
+Likes.propTypes = {
+	ratePost: PropTypes.func.isRequired
+};
 
 
 export default Likes;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PostContext } from './Post';
+import PostContext from './Context';
 
 import styles from './Post.css';
 

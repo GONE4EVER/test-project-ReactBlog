@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import PostContext from './Context';
 import routes from '../../App/routeNames';
+
 import styles from './Post.css';
-import { PostContext } from './Post';
 
 
 const Heading = React.memo(() => (
 	<PostContext.Consumer>
-		{({ title, authorId, id, createdAt }) => {
+		{({
+			title, authorId, id, createdAt
+		}) => {
 			const date = new Date(createdAt);
 
 			const day = date.getDate();
