@@ -88,9 +88,10 @@ module.exports = {
 	devtool: 'inline-source-map',
 
 	devServer: {
+		historyApiFallback: true,
+		contentBase: './Dist/',
 		hot: true,
 		port: 8000,
-		contentBase: './Dist/',
 
 		proxy: {
 			'/pages/': {
