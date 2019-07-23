@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MainRoute.css';
 
@@ -7,13 +8,15 @@ const FullSizeImage = ({ src }) => (
 		<img
 			className={styles.img}
 			style={{
-				backgroundImage:`url(${src})`
+				backgroundImage: `url(${src})`
 			}}
 			alt=""
 		/>
 	</div>
 );
 
+FullSizeImage.propTypes = {
+	src: PropTypes.string.isRequired
+};
 
 export default FullSizeImage;
- 

@@ -13,9 +13,9 @@ const VisiblePostsList = React.lazy(() => import('../../containers/VisiblePostsL
 const FullSizeImage = React.lazy(() => import('./FullSizeImage'));
 
 const MainRoute = ({ match, history }) => (
-	<Suspense fallback={<LoadingHandler/>}>
+	<Suspense fallback={<LoadingHandler />}>
 		<main>
-			<FullSizeImage src={image}/>
+			<FullSizeImage src={image} />
 			<div className={`row ${styles.container}`}>
 				<VisiblePostsList {...match} />
 				<CategoriesSelect match={match} history={history} />
