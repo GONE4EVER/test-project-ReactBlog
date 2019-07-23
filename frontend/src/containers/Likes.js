@@ -5,10 +5,11 @@ import Likes from '../components/Post/Likes';
 
 
 const mapDispatchToProps = dispatch => ({
-  ratePost: (id, mark) => dispatch(RatePost(id, mark))
+	ratePost: (id, mark) => dispatch(RatePost(id, mark))
 });
 
+
 export default connect(
-  null,
-  mapDispatchToProps
+	null,
+	mapDispatchToProps
 )(Likes);
