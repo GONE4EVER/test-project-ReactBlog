@@ -6,15 +6,12 @@
         "browser": true,
         "node": true
     },
-    "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
-    },
     "globals": {
         "React": true
     },
     "plugins": [
         "react",
+        "import",
         "jsx-a11y",
         "babel"
     ],

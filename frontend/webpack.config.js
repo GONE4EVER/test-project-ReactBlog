@@ -9,12 +9,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 require('dotenv').config();
 
 
-const srcUrl = 'localhost:8082';
+const reactRouterUrl = 'localhost:8082';
 const devMode = process.env.NODE_ENV === 'development';
 
 const usedPlugins = [
 	new webpack.HotModuleReplacementPlugin(),
-	new HtmlWebpackPlugin({ template: './index.html' }),
+
+	new HtmlWebpackPlugin({
+		template: './index.html'
+	}),
+
 	new CopyWebpackPlugin([
 		{
 			from: './node_modules/font-awesome/css/font-awesome.min.css',
@@ -39,29 +43,70 @@ module.exports = {
 	mode: 'development',
 	entry: './index.js',
 	output: {
-		path: path.resolve(__dirname, 'Dist/'),
-		filename: 'js/index.js'
+		path: path.resolve(__dirname, 'Dist'),
+		filename: 'js/index.js',
+		publicPath: '/'
 	},
+
 	optimization: {
-		minimize: !devMode
-  },
+		minimize: !devMode,
+
+		/* splitChunks: {
+			chunks: 'all',
+
+			minChunks: 1,
+
+			maxAsyncRequests: 10,
+			maxInitialRequests: 10,
+
+			minSize: 30000,
+			maxSize: 0,
+
+			automaticNameDelimiter: '~',
+			automaticNameMaxLength: 30,
+
+			name: true,
+
+			cacheGroups: {
+				vendors: {
+					test: /[\\/]node_modules[\\/]/,
+					priority: 10,
+					minChunks: 3,
+				},
+
+				default: {
+					minChunks: 2,
+					priority: -20,
+					reuseExistingChunk: true
+				}
+			}
+		} */
+	},
+
 	stats: 'minimal',
+
 	devtool: 'inline-source-map',
+
 	devServer: {
 		hot: true,
-
 		port: 8000,
 		contentBase: './Dist/',
+
 		proxy: {
-			'/pages/*': {
-				target: srcUrl,
-				bypass() {
-					return 'index.html';
+			'/pages/': {
+				target: reactRouterUrl,
+				bypass(req) {
+					console.log(req.originalUrl);
+					if (req.originalUrl.indexOf('static') === -1) {
+						return 'index.html';
+					}
 				}
 			}
 		}
 	},
+
 	resolve: { extensions: ['.js', '.jsx', '.css'] },
+
 	module: {
 		rules: [
 			{
@@ -71,11 +116,12 @@ module.exports = {
 					loader: 'babel-loader'
 				}
 			},
+
 			{
 				test: /\.css$/,
 				use: [
-					(devMode 
-						? 'style-loader' 
+					(devMode
+						? 'style-loader'
 						: MiniCssExtractPlugin.loader
 					),
 					{
@@ -90,6 +136,7 @@ module.exports = {
 					}
 				],
 			},
+
 			{
 				test: /\.(svg|png|jpg)$/,
 				loader: 'url-loader',
@@ -99,8 +146,9 @@ module.exports = {
 			},
 		],
 	},
-	plugins: devMode 
-		? usedPlugins 
+
+	plugins: devMode
+		? usedPlugins
 		: [
 			new MiniCssExtractPlugin({
 				filename: '[name]_[hash].css',
