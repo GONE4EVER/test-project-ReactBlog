@@ -97,7 +97,6 @@ module.exports = {
 			'/pages/': {
 				target: reactRouterUrl,
 				bypass(req) {
-					console.log(req.originalUrl);
 					if (req.originalUrl.indexOf('static') === -1) {
 						return 'index.html';
 					}

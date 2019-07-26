@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import {
 	BrowserRouter as Router, Switch, Route, Redirect
@@ -7,12 +7,21 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-import CreateCategoryRoute from '../components/CreateCategoryRoute';
+/* import CreateCategoryRoute from '../components/CreateCategoryRoute';
 import CreatePostRoute from '../components/CreatePostRoute';
 import ErrorRoute from '../components/ErrorRoute';
 import MainRoute from '../components/MainRoute';
-import ManagePostsRoute from '../components/ManagePostsRoute/ManagePostsRoute';
-import PostRoute from '../components/PostRoute';
+import ManagePostsRoute from '../components/ManagePostsRoute';
+import PostRoute from '../components/PostRoute'; */
+
+const CreateCategoryRoute = React.lazy(() => import('../components/CreateCategoryRoute'));
+const ErrorRoute = React.lazy(() => import('../components/ErrorRoute'));
+const CreatePostRoute = React.lazy(() => import('../components/CreatePostRoute'));
+const MainRoute = React.lazy(() => import('../components/MainRoute'));
+const ManagePostsRoute = React.lazy(() => import('../components/ManagePostsRoute'));
+const PostRoute = React.lazy(() => import('../components/PostRoute'));
+
+import LoadingHandler from '../components/LoadingHandler';
 
 import NavBar from '../components/NavBar/NavBar';
 
@@ -41,10 +50,10 @@ const AppContainer = () => (
 const App = () => (
 	<Provider store={store}>
 		<Router>
-			<React.Fragment>
-				<NavBar />
+			<NavBar />
+			<Suspense fallback={<LoadingHandler/>}>
 				<AppContainer />
-			</React.Fragment>
+			</Suspense>
 		</Router>
 	</Provider>
 );

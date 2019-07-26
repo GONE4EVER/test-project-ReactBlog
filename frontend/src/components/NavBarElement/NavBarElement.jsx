@@ -24,7 +24,6 @@ const NavBarElement = React.memo((props) => {
 	);
 });
 
-
 NavBarElement.propTypes = {
 	name: PropTypes.string.isRequired,
 	pathName: PropTypes.string.isRequired

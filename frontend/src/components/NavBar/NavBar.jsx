@@ -1,12 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 import NavBarElement from '../NavBarElement';
 import navTabs from '../../App/tabs';
 
 import styles from './NavBar.css';
 
 
-const NavBar = () => {
-	const active = document.location.pathname.replace('/', '');
+const NavBar = ({ history: { location } }) => {
+	const { pathname } = location;
 
 	return (
 		<nav className={`${styles.AppHeader} ${styles.NavBar}`}>
@@ -16,7 +18,7 @@ const NavBar = () => {
 					name={name}
 					pathName={pathName}
 
-					active={active === pathName}
+					active={pathname === `/${pathName}`}
 				/>
 			))}
 		</nav>
@@ -24,4 +26,4 @@ const NavBar = () => {
 };
 
 
-export default NavBar;
+export default withRouter(NavBar);
