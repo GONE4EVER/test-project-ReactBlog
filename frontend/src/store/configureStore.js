@@ -1,4 +1,4 @@
-import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -22,14 +22,15 @@ const store = createStore(
 			...fetchConfig
 		},
 		categories: {
+			current: '',
 			content: categories,
 			...fetchConfig
 		}
 	},
-	
-	/* composeWithDevTools(
-		applyMiddleware(thunkMiddleware)
-	) */
+
+	composeWithDevTools(
+		applyMiddleware(thunk)
+	)
 );
 
 

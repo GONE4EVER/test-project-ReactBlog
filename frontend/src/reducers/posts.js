@@ -1,12 +1,13 @@
-import actionTypes from '../actions/actionTypes';
+import { postActions } from '../actions/actionTypes';
 
 const {
 	CREATE_POST,
 	DELETE_POST,
 	GET_POST_BY_ID,
 	LIKE_POST,
-	DISLIKE_POST
-} = actionTypes;
+	DISLIKE_POST,
+	FETCHING_POSTS
+} = postActions;
 
 
 const posts = (state = { content: [] }, action) => {
@@ -48,6 +49,8 @@ const posts = (state = { content: [] }, action) => {
 					: post
 			))
 		};
+
+		/* case FETCHING_POSTS: */
 
 	default:
 		return state;

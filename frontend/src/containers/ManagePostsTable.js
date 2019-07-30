@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { DeletePost } from '../actions/actionsList';
+import { deletePost } from '../actions/posts';
 
 import ManagePostsTable from '../components/ManagePostsTable';
 
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	deletePost: id => dispatch(DeletePost(id))
+	deletePost: id => dispatch(deletePost(id))
 });
 
 

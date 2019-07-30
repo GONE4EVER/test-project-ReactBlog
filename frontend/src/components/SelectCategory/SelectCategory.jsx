@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import routes from '../../App/routeNames';
 import styles from './SelectCategory.css';
 
 
 const SelectCategory = ({
-	categories, match, history
+	categories,
+	history,
+	match,
+	switchCurrCategory
 }) => {
-	const { content } = categories;
+	const { content, current } = categories;
 	const { categoryId } = match.params;
 
 	return (
@@ -16,9 +18,9 @@ const SelectCategory = ({
 			<select
 				className={styles.select}
 				onChange={({ target }) => {
-					history.push(`${routes.MAIN}/${target.value || ''}`);
+					switchCurrCategory({ history, target });
 				}}
-				defaultValue={categoryId}
+				defaultValue={current || categoryId}
 			>
 				<option value="">All Posts</option>
 				{content.map(category => (
@@ -34,7 +36,6 @@ const SelectCategory = ({
 	);
 };
 
-
 SelectCategory.propTypes = {
 	categories: PropTypes.shape({
 		content: PropTypes.arrayOf(
@@ -43,13 +44,18 @@ SelectCategory.propTypes = {
 				name: PropTypes.string.isRequired
 			})
 		).isRequired,
+		current: PropTypes.string.isRequired,
 	}).isRequired,
 	match: PropTypes.shape({
-		categoryId: PropTypes.string
+		params: PropTypes.shape({
+			categoryId: PropTypes.string
+		}),
 	}).isRequired,
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired
-	}).isRequired
+	}).isRequired,
+	switchCurrCategory: PropTypes.func.isRequired,
 };
+
 
 export default SelectCategory;
