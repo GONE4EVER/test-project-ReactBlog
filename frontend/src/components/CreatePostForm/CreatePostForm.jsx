@@ -50,7 +50,7 @@ export default class Form extends Component {
 
 		ev.preventDefault();
 
-		if (this.formRef.current.checkValidity() === false) {
+		if (!this.formRef.current.checkValidity()) {
 			this.formRef.current.classList.add('was-validated');
 			ev.stopPropagation();
 		} else {

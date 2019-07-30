@@ -23,7 +23,6 @@ const PostsList = ({ posts }) => (
 	</ul>
 );
 
-
 PostsList.propTypes = {
 	posts: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -37,5 +36,6 @@ PostsList.propTypes = {
 		})
 	).isRequired
 };
+
 
 export default PostsList;

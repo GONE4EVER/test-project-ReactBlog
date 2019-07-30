@@ -15,9 +15,9 @@ export {
 };
 
 export default [
-	{ name: 'Main', pathName: `${MAIN}` },
-	{ name: 'Create Post', pathName: `${CREATE_POST}` },
-	{ name: 'Manage posts', pathName: `${MANAGE_POSTS}` },
-	{ name: 'Create category', pathName: `${CREATE_CATEGORY}` },
-	{ name: 'Manage category', pathName: `${MANAGE_CATEGORY}` }
+	{ name: 'Main', pathName: MAIN },
+	{ name: 'Create Post', pathName: CREATE_POST },
+	{ name: 'Manage posts', pathName: MANAGE_POSTS },
+	{ name: 'Create category', pathName: CREATE_CATEGORY },
+	{ name: 'Manage category', pathName: MANAGE_CATEGORY }
 ];

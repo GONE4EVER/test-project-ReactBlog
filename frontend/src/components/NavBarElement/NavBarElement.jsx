@@ -5,10 +5,9 @@ import { NavLink } from 'react-router-dom';
 import styles from './NavBarElement.css';
 
 
-const NavBarElement = React.memo((props) => {
-	const {
-		pathName, name
-	} = props;
+const NavBarElement = React.memo(({
+	pathName, name
+}) => {
 
 	return (
 		<NavLink
