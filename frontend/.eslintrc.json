@@ -20,6 +20,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "import/no-extraneous-dependencies": 0,
         "comma-dangle": "off",
         "react/no-array-index-key": "off",
         "no-tabs": "off",
