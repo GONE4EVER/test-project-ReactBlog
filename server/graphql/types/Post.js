@@ -3,7 +3,6 @@ const {
   GraphQLID,
   GraphQLString,
 } = require('graphql');
-const { schemas: { categoryById } } = require('../schema/category');
 
 
 const PostType = new GraphQLObjectType({
@@ -11,7 +10,7 @@ const PostType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    category: categoryById,
+    text: { type: GraphQLString },
   }),
 });
 
