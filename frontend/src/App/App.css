@@ -2,9 +2,17 @@
   --headerHeight: 60px;
 }
 
+@font-face {
+  font-family: 'SF UI Display Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Thin'), url('../../assets/fonts/sf-ui-display-light.woff') format('woff');
+}
+
 html {
   height: 100%;
   overflow: hidden;
+  font-family: "SF UI Display Thin" !important;
 }
 
 body {
@@ -26,8 +34,4 @@ a:hover {
   height: calc(100% - var(--headerHeight));
   overflow: scroll;
   overflow-x: hidden;
-}
-
-main {
-  height: 90%;
 }

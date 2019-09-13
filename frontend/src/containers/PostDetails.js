@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
-import PostDetails from '../components/PostRoute/PostDetails';
+import PostDetails from 'Routes/PostRoute/PostDetails';
 
 const getPostDetails = (posts, { match }) => {
 	const { postId } = match.params;
-	const selectedPost = posts.find(post => post.id === postId);
+	const selectedPost = posts.find(post => post.id === postId) || null;
 
-	return selectedPost || null;
+	return selectedPost;
 };
 
 const mapStateToProps = (state, ownProps) => ({

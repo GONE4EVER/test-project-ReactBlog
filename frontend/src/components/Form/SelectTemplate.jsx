@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default (config) => {
 	const { label, title } = config;
 
-	const CategorySelect = React.memo(({ content, onChange }) => (
+	const Select = React.memo(({ content, onChange }) => (
 		<div className="form-group">
 			<label htmlFor={title}>{label}</label>
 			<select
@@ -35,7 +35,7 @@ export default (config) => {
 		</div>
 	));
 
-	CategorySelect.propTypes = {
+	Select.propTypes = {
 		content: PropTypes.arrayOf(
 			PropTypes.shape({
 				id: PropTypes.string.isRequired,
@@ -45,5 +45,5 @@ export default (config) => {
 		onChange: PropTypes.func.isRequired
 	};
 
-	return CategorySelect;
+	return Select;
 };

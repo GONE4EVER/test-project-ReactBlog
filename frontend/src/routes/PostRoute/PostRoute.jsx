@@ -6,12 +6,11 @@ import PostDetails from '../../containers/PostDetails';
 import routes from '../../App/routeNames';
 
 
-const PostRoute = () => 
+const PostRoute = () => (
 	<Switch>
 		<Route exact path={`${routes.POSTS}/:postId`} component={PostDetails} />
-	</Switch>
-;
-
+</Switch>
+);
 
 
 export default PostRoute;

@@ -7,21 +7,18 @@ import styles from './NavBarElement.css';
 
 const NavBarElement = React.memo(({
 	pathName, name
-}) => {
+}) => (
+	<NavLink
+		className={styles.element}
+		to={`/${pathName}`}
 
-	return (
-		<NavLink
-			className={styles.element}
-			to={`/${pathName}`}
-
-			activeStyle={{ borderBottom: '3px solid white' }}
-		>
-			<div className={styles.text}>
-				{name}
-			</div>
-		</NavLink>
-	);
-});
+		activeStyle={{ borderBottom: '3px solid white' }}
+	>
+		<div className={styles.text}>
+			{name}
+		</div>
+	</NavLink>
+));
 
 NavBarElement.propTypes = {
 	name: PropTypes.string.isRequired,

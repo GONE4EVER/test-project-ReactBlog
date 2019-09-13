@@ -21,6 +21,7 @@ export default class Form extends Component {
 				name: PropTypes.string.isRequired
 			})
 		).isRequired,
+		current: PropTypes.string.isRequired,
 		createPost: PropTypes.func.isRequired,
 		history: PropTypes.shape({
 			push: PropTypes.func.isRequired
@@ -46,7 +47,7 @@ export default class Form extends Component {
 	}
 
 	validate = (ev) => {
-		const { createPost, history } = this.props;
+		const { createPost, current, history } = this.props;
 
 		ev.preventDefault();
 
@@ -54,8 +55,7 @@ export default class Form extends Component {
 			this.formRef.current.classList.add('was-validated');
 			ev.stopPropagation();
 		} else {
-			createPost(this.getValues());
-			history.push(`${routes.MAIN}`);
+			createPost(this.getValues(), { current, history });
 		}
 	}
 

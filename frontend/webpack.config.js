@@ -1,16 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
 
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // production mode only
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 require('dotenv').config();
 
-
-const reactRouterUrl = 'localhost:8082';
-const devMode = process.env.NODE_ENV === 'development';
+const devMode = process.env.NODE_ENV === 'dev';
 
 const usedPlugins = [
 	new webpack.HotModuleReplacementPlugin(),
@@ -39,82 +39,49 @@ const usedPlugins = [
 	])
 ];
 
+
 module.exports = {
 	mode: 'development',
 	entry: './index.js',
 	output: {
 		path: path.resolve(__dirname, 'Dist'),
-		filename: 'js/index.js',
+		filename: 'js/[name].js',
+		chunkFilename: '[name].bundle.js',
 		publicPath: '/'
 	},
 
 	optimization: {
-		minimize: !devMode,
-
-		/* splitChunks: {
-			chunks: 'all',
-
-			minChunks: 1,
-
-			maxAsyncRequests: 10,
-			maxInitialRequests: 10,
-
-			minSize: 30000,
-			maxSize: 0,
-
-			automaticNameDelimiter: '~',
-			automaticNameMaxLength: 30,
-
-			name: true,
-
-			cacheGroups: {
-				vendors: {
-					test: /[\\/]node_modules[\\/]/,
-					priority: 10,
-					minChunks: 3,
-				},
-
-				default: {
-					minChunks: 2,
-					priority: -20,
-					reuseExistingChunk: true
-				}
-			}
-		} */
+		minimize: !devMode
 	},
-
-	stats: 'minimal',
 
 	devtool: 'inline-source-map',
 
 	devServer: {
-		historyApiFallback: true,
-		contentBase: './Dist/',
 		hot: true,
-		port: 8000,
-
-		proxy: {
-			'/pages/': {
-				target: reactRouterUrl,
-				bypass(req) {
-					if (req.originalUrl.indexOf('static') === -1) {
-						return 'index.html';
-					}
-				}
-			}
-		}
+		port: 3000,
+		contentBase: './Dist/',
+		historyApiFallback: true,
 	},
 
-	resolve: { extensions: ['.js', '.jsx', '.css'] },
+	resolve: {
+		extensions: ['.js', '.jsx', '.json', '.css'],
+		alias: {
+			Assets: path.resolve(__dirname, 'assets/'),
+			Actions: path.resolve(__dirname, 'src/actions/'),
+			Components: path.resolve(__dirname, 'src/components/'),
+			Containers: path.resolve(__dirname, 'src/containers/'),
+			Reducers: path.resolve(__dirname, 'src/reducers/'),
+			Routes: path.resolve(__dirname, 'src/routes/'),
+		},
+		modules: [path.join(__dirname, 'src'), 'node_modules']
+	},
 
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
+				loader: 'babel-loader'
 			},
 
 			{
@@ -138,7 +105,7 @@ module.exports = {
 			},
 
 			{
-				test: /\.(svg|png|jpg)$/,
+				test: /\.(svg|png|jpg|woff|woff2|eot|ttf|otf)$/,
 				loader: 'url-loader',
 				options: {
 					limit: 10000,

@@ -13,6 +13,7 @@ const SelectCategory = ({
 	const { content, current } = categories;
 	const { categoryId } = match.params;
 
+
 	return (
 		<aside className={`col-md-2 blog-sidebar ${styles.container}`}>
 			<select

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 export default (config) => {
 	const { label, title } = config;
 
-	return React.memo(({ onChange }) => (
+	const TextArea = React.memo(({ onChange }) => (
 		<div className="form-group">
 			<label htmlFor={title}>{label}</label>
 			<textarea
@@ -23,4 +24,10 @@ export default (config) => {
 			</div>
 		</div>
 	));
+
+	TextArea.propTypes = {
+		onChange: PropTypes.func.isRequired,
+	};
+
+	return TextArea;
 };

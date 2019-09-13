@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import SelectCategory from '../components/SelectCategory';
-import { switchCurrentCategory } from '../actions/categories';
+import SelectCategory from 'Components/SelectCategory';
+import { switchCurrentCategory } from 'Actions/categories';
 
 const mapStateToProps = state => ({
 	categories: state.categories

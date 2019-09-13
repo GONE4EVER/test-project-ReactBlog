@@ -1,5 +1,5 @@
 import { postActions } from './actionTypes';
-
+import routes from '../App/routeNames';
 
 export const getPostById = id => ({
 	type: postActions.GET_POST_BY_ID,
@@ -8,8 +8,9 @@ export const getPostById = id => ({
 	}
 });
 
-export const createPost = (content) => {
-	const currDate = Date.now(); // !!!
+export const createPost = ([content, {current, history}]) => {
+	const currDate = Date.now();
+	history.push(`${routes.MAIN}/${current || ''}`);
 
 	return ({
 		type: postActions.CREATE_POST,
@@ -20,7 +21,7 @@ export const createPost = (content) => {
 			comments: [],
 			likes: [],
 			dislikes: [],
-			img: 'https://media.giphy.com/media/uprwwjptZW4Za/giphy.gif' // !!!
+			img: '',
 		}
 	});
 };

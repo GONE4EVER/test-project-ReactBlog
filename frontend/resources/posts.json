@@ -50,5 +50,23 @@
       "userID_3", "userID_4", "userID_2"
     ],
     "categoryId": "DOKA_2"
+  },
+  {
+    "id": "postID_4",
+    "authorId": "authorId_2",
+    "createdAt": 1817477204629,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "title": "HEADING 3",
+    "img": "",
+    "comments": [
+      "commentID_31", "commentID_32"
+    ],
+    "likes": [
+      "userID_1", "userID_6", "userID_0"
+    ],
+    "dislikes": [
+      "userID_3", "userID_4", "userID_2"
+    ],
+    "categoryId": "DOKA_2"
   }
 ]
