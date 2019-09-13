@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import PropTypes from 'prop-types';
 
+import CategoriesSelect from 'Containers/CategoriesSelect';
+import VisiblePostsList from 'Containers/VisiblePostsList';
 import styles from './MainRoute.css';
 import image from '../../../assets/Sakura.jpg';
 
-import CategoriesSelect from '../../containers/CategoriesSelect';
-import VisiblePostsList from '../../containers/VisiblePostsList';
 import FullSizeImage from './FullSizeImage';
 
 

@@ -7,19 +7,12 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-/* import CreateCategoryRoute from '../components/CreateCategoryRoute';
-import CreatePostRoute from '../components/CreatePostRoute';
-import ErrorRoute from '../components/ErrorRoute';
-import MainRoute from '../components/MainRoute';
-import ManagePostsRoute from '../components/ManagePostsRoute';
-import PostRoute from '../components/PostRoute'; */
-
-const CreateCategoryRoute = React.lazy(() => import('../components/CreateCategoryRoute'));
-const ErrorRoute = React.lazy(() => import('../components/ErrorRoute'));
-const CreatePostRoute = React.lazy(() => import('../components/CreatePostRoute'));
-const MainRoute = React.lazy(() => import('../components/MainRoute'));
-const ManagePostsRoute = React.lazy(() => import('../components/ManagePostsRoute'));
-const PostRoute = React.lazy(() => import('../components/PostRoute'));
+const CreateCategoryRoute = React.lazy(() => import('Routes/CreateCategoryRoute'));
+const ErrorRoute = React.lazy(() => import('Routes/ErrorRoute'));
+const CreatePostRoute = React.lazy(() => import('Routes/CreatePostRoute'));
+const MainRoute = React.lazy(() => import('Routes/MainRoute'));
+const ManagePostsRoute = React.lazy(() => import('Routes/ManagePostsRoute'));
+const PostRoute = React.lazy(() => import('Routes/PostRoute'));
 
 import LoadingHandler from '../components/LoadingHandler';
 
