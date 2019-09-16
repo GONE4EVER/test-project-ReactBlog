@@ -19,7 +19,7 @@ const SelectCategory = ({
 			<select
 				className={styles.select}
 				onChange={({ target }) => {
-					switchCurrCategory({ history, target });
+					switchCurrCategory({ history, value: target.value });
 				}}
 				defaultValue={current || categoryId}
 			>

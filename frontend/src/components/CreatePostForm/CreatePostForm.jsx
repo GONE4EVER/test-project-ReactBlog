@@ -36,7 +36,7 @@ const Form = ({
 
 	return (
 		<div className="col-6">
-			<form noValidate ref={formRef} blur={() => alert()}>
+			<form noValidate ref={formRef}>
 				<AuthorInput onChange={handleChange} />
 				<TitleInput onChange={handleChange} />
 				<CategorySelect content={categories} onChange={handleChange} />

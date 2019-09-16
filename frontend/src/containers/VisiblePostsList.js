@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
-import PostsList from '../components/PostsList';
+import PostsList from 'Components/PostsList';
 
 
-const getVisiblePosts = (posts, categories, match) => {
-	const { categoryId } = match.params;
-	const currCategory = categories.find(category => category.id === categoryId);
+const getVisiblePosts = (
+	posts,
+	{ content, current },
+	{ params: { categoryId } }
+) => {
+	const id = current || categoryId;
+
+	const currCategory = content.find(category => category.id === id);
 
 	return currCategory ? posts.filter(post => post.categoryId === currCategory.id) : posts;
 };
 
 const mapStateToProps = (state, ownProps) => ({
-	posts: getVisiblePosts(state.posts.content, state.categories.content, ownProps),
+	posts: getVisiblePosts(state.posts.content, state.categories, ownProps),
 });
 
 

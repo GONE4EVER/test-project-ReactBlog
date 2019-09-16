@@ -7,20 +7,19 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-const CreateCategoryRoute = React.lazy(() => import('Routes/CreateCategoryRoute'));
-const ErrorRoute = React.lazy(() => import('Routes/ErrorRoute'));
-const CreatePostRoute = React.lazy(() => import('Routes/CreatePostRoute'));
-const MainRoute = React.lazy(() => import('Routes/MainRoute'));
-const ManagePostsRoute = React.lazy(() => import('Routes/ManagePostsRoute'));
-const PostRoute = React.lazy(() => import('Routes/PostRoute'));
-
 import LoadingHandler from '../components/LoadingHandler';
-
 import NavBar from '../components/NavBar/NavBar';
 
 import routes from './routeNames';
 
 import styles from './App.css';
+
+const CreateCategoryRoute = React.lazy(() => import('Routes/CreateCategoryRoute'));
+const ErrorRoute = React.lazy(() => import('Routes/ErrorRoute'));
+const CreatePostRoute = React.lazy(() => import('Routes/CreatePostRoute'));
+const MainRoute = React.lazy(() => import('Containers/MainRoute'));
+const ManagePostsRoute = React.lazy(() => import('Routes/ManagePostsRoute'));
+const PostRoute = React.lazy(() => import('Routes/PostRoute'));
 
 const AppContainer = () => (
 	<div className={styles.AppContainer}>
@@ -44,7 +43,7 @@ const App = () => (
 	<Provider store={store}>
 		<Router>
 			<NavBar />
-			<Suspense fallback={<LoadingHandler/>}>
+			<Suspense fallback={<LoadingHandler />}>
 				<AppContainer />
 			</Suspense>
 		</Router>

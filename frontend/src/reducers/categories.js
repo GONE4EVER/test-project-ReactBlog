@@ -7,9 +7,16 @@ const {
 	SWITCH_CURR_CATEGORY,
 } = categoryActions;
 
+const DEFAULT_VALUE = '';
+
 const categories = (state = { content: [], current: null }, action) => {
 	const { type, payload } = action;
 	const { content } = state;
+
+	const checkIfCategoryExists = (categoryId) => {
+		const result = content.find(category => category.id === categoryId);
+		return result ? result.id : DEFAULT_VALUE;
+	};
 
 	switch (type) {
 	case SHOW_ALL_CATEGORIES:
@@ -30,8 +37,8 @@ const categories = (state = { content: [], current: null }, action) => {
 		return {
 			...state,
 			current: payload.id
-				? content.find(category => category.id === payload.id).id
-				: ''
+				? checkIfCategoryExists(payload.id)
+				: DEFAULT_VALUE
 		};
 
 	default:

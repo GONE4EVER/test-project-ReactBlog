@@ -4,6 +4,7 @@ import { switchCurrentCategory } from 'Actions/categories';
 import MainRoute from 'Routes/MainRoute';
 
 const mapStateToProps = state => ({
+	categories: state.categories.content,
 	current: state.categories.current
 });
 

@@ -1,17 +1,15 @@
+import routes from 'App/routeNames';
 import { categoryActions } from './actionTypes';
-import routes from '../App/routeNames';
 
-export const switchCurrentCategory = ({ history, target }) => {
-	history.push(`${routes.MAIN}/${target.value || ''}`);
+export const switchCurrentCategory = ({ history, value }) => {
+	history.push(`${routes.MAIN}/${value || ''}`);
 
 	return {
 		type: categoryActions.SWITCH_CURR_CATEGORY,
 		payload: {
-			id: target.value
+			id: value
 		}
 	};
 };
 
-export const abc = () => {
-
-};
+export const abc = () => {};
