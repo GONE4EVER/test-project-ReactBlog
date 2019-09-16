@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { withRouter } from 'react-router-dom';
 
 import NavBarElement from '../NavBarElement';
@@ -23,6 +25,14 @@ const NavBar = ({ history: { location } }) => {
 			))}
 		</nav>
 	);
+};
+
+NavBar.propTypes = {
+	history: PropTypes.shape({
+		location: PropTypes.shape({
+			pathname: PropTypes.string.isRequired,
+		}).isRequired,
+	}).isRequired,
 };
 
 

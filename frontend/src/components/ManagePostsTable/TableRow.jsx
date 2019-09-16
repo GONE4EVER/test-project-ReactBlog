@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 const TableRow = ({ content, num, clickHandler }) => {
-	const click = () => clickHandler(content.id)
+	const click = () => clickHandler(content.id);
 
 	return (
 		<tr>
@@ -22,7 +22,7 @@ const TableRow = ({ content, num, clickHandler }) => {
 				</button>
 			</td>
 		</tr>
-	)
+	);
 };
 
 
