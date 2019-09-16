@@ -14,7 +14,7 @@ export default (config) => {
 				className="form-control"
 				name={title}
 				defaultValue=""
-				onChange={(ev) => { onChange(title, ev.target.value); }}
+				onChange={onChange}
 			>
 				<option value="">Choose category...</option>
 				{content.map(item => (

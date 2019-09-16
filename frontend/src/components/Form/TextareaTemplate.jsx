@@ -14,7 +14,7 @@ export default (config) => {
 				className="form-control"
 				rows="8"
 				name={title}
-				onChange={(ev) => { onChange(title, ev.target.value); }}
+				onChange={onChange}
 			/>
 			<div className="valid-feedback">
 				{'Looks good!'}

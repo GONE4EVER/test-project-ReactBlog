@@ -15,7 +15,7 @@ export default (config) => {
 				id={title}
 				className="autocomplete form-control"
 				name={title}
-				onChange={(ev) => { onChange(title, ev.target.value); }}
+				onChange={onChange}
 			/>
 			<div className="valid-feedback">
 				{'Perfect!'}

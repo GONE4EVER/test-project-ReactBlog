@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import routes from '../../App/routeNames';
-
+import useForm from './useForm';
 import InputName, {
 	AuthorInput,
 	TitleInput,
@@ -12,75 +11,63 @@ import InputName, {
 
 import styles from './CreatePostForm.css';
 
-
-export default class Form extends Component {
-	static propTypes = {
-		categories: PropTypes.arrayOf(
-			PropTypes.shape({
-				id: PropTypes.string.isRequired,
-				name: PropTypes.string.isRequired
-			})
-		).isRequired,
-		current: PropTypes.string.isRequired,
-		createPost: PropTypes.func.isRequired,
-		history: PropTypes.shape({
-			push: PropTypes.func.isRequired
-		}).isRequired
-	}
-
-	constructor() {
-		super();
-		this.formRef = React.createRef();
-	}
-
-	state = {
+const Form = ({
+	categories, createPost, current, history
+}) => {
+	const [values, handleChange] = useForm({
 		[InputName.author]: '',
 		[InputName.category]: '',
 		[InputName.text]: '',
 		[InputName.title]: ''
-	}
+	});
 
-	getValues = () => this.state
+	const formRef = React.createRef();
 
-	setInputState = (inputName, value) => {
-		this.setState({ [inputName]: value });
-	}
-
-	validate = (ev) => {
-		const { createPost, current, history } = this.props;
-
+	const validate = (ev) => {
 		ev.preventDefault();
 
-		if (!this.formRef.current.checkValidity()) {
-			this.formRef.current.classList.add('was-validated');
+		if (!formRef.current.checkValidity()) {
+			formRef.current.classList.add('was-validated');
 			ev.stopPropagation();
 		} else {
-			createPost(this.getValues(), { current, history });
+			createPost(values, { current, history });
 		}
-	}
+	};
 
-	render() {
-		const { categories } = this.props;
+	return (
+		<div className="col-6">
+			<form noValidate ref={formRef} blur={() => alert()}>
+				<AuthorInput onChange={handleChange} />
+				<TitleInput onChange={handleChange} />
+				<CategorySelect content={categories} onChange={handleChange} />
+				<DescriptionArea onChange={handleChange} />
+				<div className={styles.content}>
+					<button
+						type="submit"
+						className="btn btn-primary"
+						style={{ width: '50%' }}
+						onClick={validate}
+					>
+						{'Submit'}
+					</button>
+				</div>
+			</form>
+		</div>
+	);
+};
 
-		return (
-			<div className="col-6">
-				<form noValidate ref={this.formRef}>
-					<AuthorInput onChange={this.setInputState} />
-					<TitleInput onChange={this.setInputState} />
-					<CategorySelect content={categories} onChange={this.setInputState} />
-					<DescriptionArea onChange={this.setInputState} />
-					<div className={styles.content}>
-						<button
-							type="submit"
-							className="btn btn-primary"
-							style={{ width: '50%' }}
-							onClick={this.validate}
-						>
-							{'Submit'}
-						</button>
-					</div>
-				</form>
-			</div>
-		);
-	}
-}
+Form.propTypes = {
+	categories: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired
+		})
+	).isRequired,
+	current: PropTypes.string.isRequired,
+	createPost: PropTypes.func.isRequired,
+	history: PropTypes.shape({
+		push: PropTypes.func.isRequired
+	}).isRequired
+};
+
+export default Form;
