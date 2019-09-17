@@ -5,15 +5,17 @@ import PostContext from './Context';
 import styles from './Post.css';
 
 
+const IMAGE_FALLBACK_LINK = 'https://media.giphy.com/media/uprwwjptZW4Za/giphy.gif';
+
 const Content = () => (
 	<PostContext.Consumer>
-		{value => (
+		{({ img, text }) => (
 			<div className={`row ${styles.content}`}>
 				<div className={`col-2 ${styles.imgContainer}`}>
-					<img src={value.img || 'https://media.giphy.com/media/uprwwjptZW4Za/giphy.gif'} alt="" />
+					<img src={img || IMAGE_FALLBACK_LINK} alt="" />
 				</div>
 				<p className={`col-10 ${styles.text}`}>
-					{value.text}
+					{text}
 				</p>
 			</div>
 		)}
