@@ -7,7 +7,7 @@ import styles from './Post.css';
 
 const Comments = () => (
 	<PostContext.Consumer>
-		{value => (
+		{({ comments }) => (
 			<div className={`col-1 ${styles.comments}`}>
 				<div
 					name="commentsIcon"
@@ -15,7 +15,7 @@ const Comments = () => (
 					aria-hidden="true"
 				/>
 				<span className={styles.spanText}>
-					<b>{value.comments.length}</b>
+					<b>{comments.length}</b>
 				</span>
 			</div>
 		)}
